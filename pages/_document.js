@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-import siteMetadata from '../utils/constants/siteMetadata';
+import siteMetadata from '../lib/utils/constants/siteMetadata';
 
 class AppDocument extends Document {
   render() {
@@ -8,6 +8,8 @@ class AppDocument extends Document {
       <Html lang="en" className="scroll-smooth">
         <Head>
           <meta charSet="utf-8" />
+          <meta content="width=device-width, initial-scale=1" name="viewport" />
+          
           <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png" />
           <link rel="shortcut icon" href="/static/favicons/favicon.ico" />
           <link
