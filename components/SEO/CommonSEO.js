@@ -1,3 +1,6 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -40,5 +43,13 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
   </Head>
   )
 }
+
+CommonSEO.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  ogType: PropTypes.string,
+  ogImage: PropTypes.string,
+  twImage: PropTypes.string,
+};
 
 export default CommonSEO;

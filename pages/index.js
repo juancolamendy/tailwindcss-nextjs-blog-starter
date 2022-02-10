@@ -1,6 +1,6 @@
 import { getAllFilesFrontMatter } from '../lib/mdx';
 
-import { CommonSEO } from '../components/SEO';
+import { PageSEO } from '../components/SEO';
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blogs');
@@ -13,7 +13,7 @@ const Index = ({ posts }) => {
   console.log('posts:', posts);
   return (
     <>
-      <CommonSEO title="my page" />
+      <PageSEO title="my page" description="description and page" />
       Hello World!
     </>
   );

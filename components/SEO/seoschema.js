@@ -61,3 +61,57 @@ export const buildCommonSchema = (siteUrl, siteName, siteLogo, author, authorSlu
     ]}
     `);
 };
+
+export const buildPageSchema = (url, title, date, description, domain) => {
+  const dtToday = new Date();
+  return (`
+  {
+  "@context":"https://schema.org",
+  "@graph":[
+      {
+        "@type": "WebPage",
+        "@id": "${url}#webpage",
+        "url": "${url}",
+        "name": "${title}",
+        "datePublished": "${date || dtToday.toISOString()}",
+        "dateModified": "${date || dtToday.toISOString()}",
+        "description": "${description}",
+        "isPartOf": {
+          "@id": "${domain}/#website"
+        }
+      }
+  ]}
+  `);
+};
+
+export const buildBlogSchema = (url, title, date, description, domain, authorSlug, ogImage) => {
+  const dtToday = new Date();
+  return (`
+  {
+  "@context":"https://schema.org",
+  "@graph":[
+      {
+        "@type": "Article",
+        "@id":"${url}#article",
+        "headline": "${title}",
+        "url": "${url}",
+        "description": "${description}",
+        "image": "${ogImage}",
+        "dateModified": "${date || dtToday.toISOString()}",
+        "datePublished": "${date || dtToday.toISOString()}",
+        "author":{
+          "@id":"${domain}/people/${authorSlug}/#person"
+        },
+        "publisher":{
+          "@id":"${domain}/#organization"
+        },
+        "isPartOf":{
+          "@id":"${url}#webpage"
+        },                          
+        "mainEntityOfPage": {
+          "@id": "${url}#webpage"
+        }
+      }
+  ]}
+  `);
+};
