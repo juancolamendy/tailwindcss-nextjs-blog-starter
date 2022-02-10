@@ -10,7 +10,7 @@ const SMNav = () => {
       <Link
         key={link.title}
         href={link.href}
-        className="font-light p-4 hover:opacity-60"
+        className="font-light p-4 transition duration-300 ease-in-out hover:opacity-60"
       >
         {link.title}
       </Link>
