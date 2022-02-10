@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import SMNav from './SMNav';
+import DefaultNav from './DefaultNav';
 import { Link } from '../../components/Link';
 import Logo from '../../lib/data/images/logo.svg'
 import siteMetadata from '../../lib/utils/constants/siteMetadata'; 
@@ -14,14 +15,15 @@ const Header = () => {
         <div className="w-8 h-4 mr-3">
           <Logo />
         </div>
-        <div className="hidden h-6 text-2xl font-semibold sm:block">
+        <div className="hidden h-6 text-2xl font-semibold hover:opacity-60 sm:block">
           {siteMetadata.headerTitle}
         </div>
       </div>
     </Link>
-    <div className="flex items-center text-base leading-5">
+    <nav className="flex items-center text-base leading-5">
       <SMNav />
-    </div>
+      <DefaultNav />
+    </nav>
   </header>
   );
 };
