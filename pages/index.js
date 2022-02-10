@@ -1,9 +1,22 @@
-import Head from 'next/head'
+import { getAllFilesFrontMatter } from '../lib/mdx';
 
-export default function Home() {
-  return (
-    <div>
-      Hello World!
-    </div>
-  )
+import { CommonSEO } from '../components/SEO';
+
+export async function getStaticProps() {
+  const posts = await getAllFilesFrontMatter('blogs');
+  console.log('posts:', posts);
+
+  return { props: { posts } };
 }
+
+const Index = ({ posts }) => {
+  console.log('posts:', posts);
+  return (
+    <>
+      <CommonSEO title="my page" />
+      Hello World!
+    </>
+  );
+}
+
+export default Index;
