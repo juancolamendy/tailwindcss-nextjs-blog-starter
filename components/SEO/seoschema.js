@@ -1,4 +1,4 @@
-export const buildCommonSchema = (siteUrl, siteName, siteLogo, author, authorSlug, authorDescription, authorImage, linkedin, twitter) => {
+export const buildCommonSchema = (siteUrl, siteName, siteLogo, siteTwitter, author, authorSlug, authorDescription, authorImage, authorLinkedIn, authorTwitter) => {
     return (`
     {
     "@context":"https://schema.org",
@@ -7,22 +7,22 @@ export const buildCommonSchema = (siteUrl, siteName, siteLogo, author, authorSlu
         {
             "@type":"Organization",
             "@id":"${siteUrl}/#organization",
-            "url":"${siteUrl}/",
+            "url":"${siteUrl}",
             "name":"${siteName}",
             "sameAs":[
-                "${twitter}"
+                "${siteTwitter}"
             ],
             "logo": {
                 "@type":"ImageObject",
                 "@id":"${siteUrl}/#logo",
                 "url":"${siteLogo}",
-                "caption":"${siteName}"
+                "caption":"${siteName} - Logo"
             },
             "image": {
                 "@type":"ImageObject",
                 "@id": "${siteUrl}/#image",
                 "url": "${siteLogo}",
-                "caption": "${siteName}"
+                "caption": "${siteName} - Image"
             },
             "founder": {
                 "@id":"${siteUrl}/people/${authorSlug}/#person"
@@ -37,11 +37,11 @@ export const buildCommonSchema = (siteUrl, siteName, siteLogo, author, authorSlu
                 "@type":"ImageObject",
                 "@id":"${siteUrl}/people/${authorSlug}/images/#image",
                 "url":"${authorImage}",
-                "caption":"${author}"
+                "caption":"${author} - Image"
             },
             "sameAs": [
-                "${linkedin}",
-                "${twitter}"
+                "${authorLinkedIn}",
+                "${authorTwitter}"
             ]
         },
         {
@@ -62,7 +62,7 @@ export const buildCommonSchema = (siteUrl, siteName, siteLogo, author, authorSlu
     `);
 };
 
-export const buildPageSchema = (url, title, date, description, domain) => {
+export const buildPageSchema = (url, title, description, domain, date) => {
   const dtToday = new Date();
   return (`
   {
@@ -84,7 +84,7 @@ export const buildPageSchema = (url, title, date, description, domain) => {
   `);
 };
 
-export const buildBlogSchema = (url, title, date, description, domain, authorSlug, ogImage) => {
+export const buildBlogSchema = (url, title, description, domain, authorSlug, ogImage, date) => {
   const dtToday = new Date();
   return (`
   {

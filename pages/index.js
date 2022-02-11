@@ -13,7 +13,7 @@ const Index = ({ posts }) => {
   console.log('posts:', posts);
   return (
     <>
-      <PageSEO title="my page" description="description and page" />
+      <PageSEO title="Blog Starter by JC Olamendy" description="Blog Starter will help you build your blog platform faster" />
       Hello World!
     </>
   );

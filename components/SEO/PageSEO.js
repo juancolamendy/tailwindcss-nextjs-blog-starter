@@ -9,7 +9,7 @@ import CommonSEO from './CommonSEO';
 import siteMetadata from '../../lib/utils/constants/siteMetadata';
 import { buildPageSchema } from './seoschema'; 
 
-const PageSEO = ({ title, description }) => {
+const PageSEO = ({ title, description, ogImage, twImage }) => {
   // hooks
   const router = useRouter();
 
@@ -20,15 +20,15 @@ const PageSEO = ({ title, description }) => {
       title={title}
       description={description}
       ogType="website"
-      ogImage={`${siteMetadata.siteUrl}${siteMetadata.socials.banner}`}
-      twImage={`${siteMetadata.siteUrl}${siteMetadata.socials.banner}`}
+      ogImage={ogImage || `${siteMetadata.site.url}${siteMetadata.site.banner}`}
+      twImage={twImage || `${siteMetadata.site.url}${siteMetadata.site.banner}`}
     />
     <Head>
       <script 
           type='application/ld+json' 
           dangerouslySetInnerHTML={ { __html: 
           `
-          ${buildPageSchema(`${siteMetadata.siteUrl}${router.asPath}`, title, null, description, siteMetadata.siteUrl)}
+          ${buildPageSchema(`${siteMetadata.site.url}${router.asPath}`, title, description, siteMetadata.site.url)}
           `}} 
       />      
     </Head>
@@ -39,6 +39,8 @@ const PageSEO = ({ title, description }) => {
 PageSEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
+  ogImage: PropTypes.string,
+  twImage: PropTypes.string,
 };
 
 export default PageSEO;

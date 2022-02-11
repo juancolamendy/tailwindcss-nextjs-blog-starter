@@ -26,8 +26,8 @@ class AppDocument extends Document {
           <link rel="manifest" href="/static/favicons/site.webmanifest" />
           <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#fff" />
 
-          <meta name="apple-mobile-web-app-title" content={siteMetadata.siteName} />
-          <meta name="application-name" content={siteMetadata.siteName} />
+          <meta name="apple-mobile-web-app-title" content={siteMetadata.site.name} />
+          <meta name="application-name" content={siteMetadata.site.name} />
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="theme-color" content="#ffffff" />
 
