@@ -11,7 +11,7 @@ const BlogSummary = ({slug, date, title, summary, tags, authorName, headerImage}
   return (
   <article className="flex flex-col">
     <header className="flex flex-col space-y-1 sm:space-y-2">
-      <h2 className="text-3xl font-bold leading-8 tracking-tight transition duration-300 ease-in-out hover:opacity-60">
+      <h2 className="text-3xl font-bold leading-8 tracking-tight link-text">
         <Link
           href={`/blog/${slug}`}
           className="text-gray-900"
@@ -39,7 +39,7 @@ const BlogSummary = ({slug, date, title, summary, tags, authorName, headerImage}
     <footer className="text-xs font-medium leading-6 mt-3">
       <Link
         href={`/blog/${slug}`}
-        className="text-gray-500 transition duration-100 ease-in-out hover:text-gray-600"
+        className="text-gray-500 link-text"
         aria-label={`Read "${title}"`}
       >
         Read more &rarr;

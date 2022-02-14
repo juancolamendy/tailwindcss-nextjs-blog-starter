@@ -52,7 +52,7 @@ const Index = ({ posts }) => {
       <div className="flex justify-end text-base font-medium leading-6">
         <Link
           href="/blog"
-          className="text-gray-500 transition duration-300 ease-in-out hover:opacity-60"
+          className="text-gray-500 link-text"
           aria-label="all posts"
         >
           All Posts &rarr;

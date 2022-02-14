@@ -22,7 +22,7 @@ export default function Footer() {
           <div>{` • `}</div>
           <div>{`© ${new Date().getFullYear()}`}</div>
           <div>{` • `}</div>
-          <Link className="transition duration-300 ease-in-out hover:opacity-60" href="/">{siteMetadata.meta.title}</Link>
+          <Link className="link-text" href="/">{siteMetadata.meta.title}</Link>
         </div>
       </div>
     </footer>

@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.link-text {
+  @apply transition duration-300 ease-in-out hover:opacity-60;
+}
