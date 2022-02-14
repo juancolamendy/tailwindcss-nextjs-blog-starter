@@ -55,7 +55,8 @@ BlogSummary.propTypes = {
   title: PropTypes.string,
   summary: PropTypes.string,
   tags: PropTypes.array,
-  authorName: PropTypes.array,
+  authorName: PropTypes.string,
+  headerImage: PropTypes.string,
 };
 
 export default BlogSummary;

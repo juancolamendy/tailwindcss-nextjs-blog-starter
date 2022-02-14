@@ -2,6 +2,7 @@ import { getAllFilesFrontMatter } from '../lib/mdx';
 
 import { PageSEO } from '../components/SEO';
 import { BlogSummary } from '../components/BlogSummary';
+import { Link } from '../components/Link';
 
 import constants from '../lib/utils/constants';
 import siteMetadata from '../lib/utils/constants/siteMetadata';
@@ -47,6 +48,17 @@ const Index = ({ posts }) => {
           })}
         </ul>
       </div>
+      {posts.length > constants.MaxDisplay && (
+      <div className="flex justify-end text-base font-medium leading-6">
+        <Link
+          href="/blog"
+          className="text-gray-500 transition duration-300 ease-in-out hover:opacity-60"
+          aria-label="all posts"
+        >
+          All Posts &rarr;
+        </Link>
+      </div>
+      )}
     </>
   );
 }
