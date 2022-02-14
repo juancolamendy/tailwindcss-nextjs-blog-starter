@@ -7,7 +7,7 @@ import { slug } from 'github-slugger';
 const Tag = ({text}) => {
   return (
     <Link href={`/tags/${slug(text)}`}>
-      <a className="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600">
+      <a className="mr-3 text-xs font-light uppercase transition duration-300 ease-in-out hover:opacity-60">
         {text.split(' ').join('-')}
       </a>
     </Link>

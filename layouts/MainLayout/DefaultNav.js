@@ -49,7 +49,7 @@ const DefaultNav = () => {
         </svg>
       </button>
       <div
-        className={classNames('fixed top-20 right-0 z-10 h-full w-full bg-gray-100 opacity-95 transform  duration-300 ease-in-out', show ? 'translate-x-0' : 'translate-x-full')}
+        className={classNames('fixed top-20 right-0 z-10 h-full w-full bg-gray-100 opacity-95 transform duration-300 ease-in-out', show ? 'translate-x-0' : 'translate-x-full')}
       >
         <button
           type="button"

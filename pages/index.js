@@ -23,17 +23,25 @@ const Index = ({ posts }) => {
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-600 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Latest
           </h1>
-          <p className="text-lg leading-7">
+          <p className="text-xl leading-7">
             {siteMetadata.meta.blogsDescription}
           </p>
         </div>
         <ul className="divide-y divide-gray-400">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, constants.MaxDisplay).map(frontMatter => {
-            const { slug, date, title, summary, tags } = frontMatter;
+            const { slug, date, title, summary, tags, author, images } = frontMatter;
             return (
-            <li key={slug} className="py-8 sm:py-12">
-              <BlogSummary slug={slug} date={date} title={title} summary={summary} tags={tags} />
+            <li key={slug} className="py-6 sm:py-10">
+              <BlogSummary
+                slug={slug} 
+                date={date}
+                title={title}
+                summary={summary}
+                tags={tags}
+                authorName={author.name}
+                headerImage={ (images && images.length > 0 ) ? images[0] : ''}
+              />
             </li>
             )
           })}

@@ -6,7 +6,7 @@ tags: ['next-js', 'tailwind', 'guide']
 draft: false
 summary: 'Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Checkout the Tailwind Nextjs Starter Blog template.'
 images: ['/static/images/blogs/introduction-tailwindcss-nextjs-starter-blog.jpg']
-authors: ['default', 'juancolamendy']
+author: {'name': 'Juan C. Olamendy', 'slug': 'juancolamendy'}
 ---
 
 ![tailwind-nextjs-banner](/static/images/twitter-card.png)
