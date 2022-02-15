@@ -21,7 +21,7 @@ const Index = ({ posts }) => {
     <>
       <PageSEO title="Blog Starter by JC Olamendy" description="Blog Starter will help you build your blog platform faster" />
       <div className="divide-y divide-primary-200">
-        <div className="flex flex-col justify-center items-center space-y-2 py-2 md:space-y-5 md:py-4">
+        <div className="flex flex-col justify-center items-center space-y-2 py-2 md:space-y-5 md:py-6">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-800 sm:text-4xl sm:leading-10 md:text-5xl md:leading-12">
             Get Exclusive Tips
           </h1>
