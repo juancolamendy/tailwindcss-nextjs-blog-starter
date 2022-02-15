@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import { useForm } from "react-hook-form";
 
-import siteMetadata from '../../lib/utils/constants/siteMetadata';
+import siteMetadata from '../../data/siteMetadata';
 
 const NewsletterForm = () => {
   // state

@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from '../../components/Link';
 import { SocialIcon } from '../..//components/SocialIcon';
 
-import siteMetadata from '../../lib/utils/constants/siteMetadata';
+import siteMetadata from '../../data/siteMetadata';
 
 export default function Footer() {
   return (

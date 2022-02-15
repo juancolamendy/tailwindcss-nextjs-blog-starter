@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 
 import { Link } from '../../components/Link';
-import headerNavLinks from '../../lib/utils/constants/headerNavLinks';
+import headerNavLinks from '../../data/headerNavLinks';
 
 const DefaultNav = () => {
   const [show, setShow] = useState(false);

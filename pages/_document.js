@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-import siteMetadata from '../lib/utils/constants/siteMetadata';
+import siteMetadata from '../data/siteMetadata';
 
 class AppDocument extends Document {
   render() {

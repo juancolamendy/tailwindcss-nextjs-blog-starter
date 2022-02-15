@@ -5,7 +5,7 @@ import SMNav from './SMNav';
 import DefaultNav from './DefaultNav';
 import { Link } from '../../components/Link';
 import Logo from '../../public/static/images/logo.svg';
-import siteMetadata from '../../lib/utils/constants/siteMetadata'; 
+import siteMetadata from '../../data/siteMetadata'; 
 
 const Header = () => {
   return (

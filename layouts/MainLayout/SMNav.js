@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Link } from '../../components/Link';
-import headerNavLinks from '../../lib/utils/constants/headerNavLinks';
+import headerNavLinks from '../../data/headerNavLinks';
 
 const SMNav = () => {
   return (

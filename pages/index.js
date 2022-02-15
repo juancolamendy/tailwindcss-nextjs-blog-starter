@@ -6,7 +6,7 @@ import { Link } from '../components/Link';
 import { NewsletterForm } from '../components/NewsletterForm';
 
 import constants from '../lib/utils/constants';
-import siteMetadata from '../lib/utils/constants/siteMetadata';
+import siteMetadata from '../data/siteMetadata';
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blogs');

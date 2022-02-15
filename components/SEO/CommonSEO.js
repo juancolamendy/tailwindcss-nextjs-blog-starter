@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import siteMetadata from '../../lib/utils/constants/siteMetadata';
+import siteMetadata from '../../data/siteMetadata';
 import { buildCommonSchema } from './seoschema'; 
 
 const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
