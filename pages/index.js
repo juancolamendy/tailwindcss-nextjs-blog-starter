@@ -19,16 +19,16 @@ const Index = ({ posts }) => {
   return (
     <>
       <PageSEO title="Blog Starter by JC Olamendy" description="Blog Starter will help you build your blog platform faster" />
-      <div className="divide-y divide-gray-200">
+      <div className="divide-y divide-primary-200">
         <div className="space-y-2 py-2 md:space-y-5 md:py-4">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-600 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-primary-600 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Latest
           </h1>
-          <p className="text-xl leading-7">
+          <p className="text-xl leading-7 text-primary-600">
             {siteMetadata.meta.blogsDescription}
           </p>
         </div>
-        <ul className="divide-y divide-gray-400">
+        <ul className="divide-y divide-primary-400">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, constants.MaxDisplay).map(frontMatter => {
             const { slug, date, title, summary, tags, author, images } = frontMatter;
@@ -52,7 +52,7 @@ const Index = ({ posts }) => {
       <div className="flex justify-end text-base font-medium leading-6">
         <Link
           href="/blog"
-          className="text-gray-500 link-text"
+          className="text-primary-500 link-text"
           aria-label="all posts"
         >
           All Posts &rarr;

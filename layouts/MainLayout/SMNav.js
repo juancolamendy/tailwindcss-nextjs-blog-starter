@@ -10,7 +10,7 @@ const SMNav = () => {
       <Link
         key={link.title}
         href={link.href}
-        className="font-light p-4 link-text"
+        className="text-primary-800 font-light p-4 link-text"
       >
         {link.title}
       </Link>

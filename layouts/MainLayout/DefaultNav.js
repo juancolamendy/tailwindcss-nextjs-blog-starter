@@ -31,7 +31,7 @@ const DefaultNav = () => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          className="text-gray-900"
+          className="text-primary-900"
         >
           {show ? (
             <path
@@ -62,7 +62,7 @@ const DefaultNav = () => {
             <div key={link.title} className="px-12 py-4">
               <Link
                 href={link.href}
-                className="font-light p-4 hover:opacity-60"
+                className="text-primary-900 font-light p-4 hover:opacity-60"
                 onClick={handleToggle}
               >
                 {link.title}

@@ -4,7 +4,7 @@ const FourZeroFour = () => {
   return (
   <div className="flex flex-col items-center justify-center space-y-4 md:mt-24 md:flex-row md:space-x-6">
     <div className="pt-6 pb-8">
-      <h1 className="text-6xl font-extrabold leading-9 tracking-tight text-gray-100 md:border-r-2 md:px-6 md:text-8xl md:leading-14">
+      <h1 className="text-6xl font-extrabold leading-9 tracking-tight text-primary-100 md:border-r-2 md:px-6 md:text-8xl md:leading-14">
         404
       </h1>
     </div>

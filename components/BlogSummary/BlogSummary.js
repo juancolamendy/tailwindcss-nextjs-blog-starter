@@ -14,7 +14,7 @@ const BlogSummary = ({slug, date, title, summary, tags, authorName, headerImage}
       <h2 className="text-3xl font-bold leading-8 tracking-tight link-text">
         <Link
           href={`/blog/${slug}`}
-          className="text-gray-900"
+          className="text-primary-700"
         >
           {title}
         </Link>

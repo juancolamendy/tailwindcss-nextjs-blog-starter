@@ -20,7 +20,7 @@ const SocialIcon = ({kind, href, size}) => {
 
   return (
     <a
-      className="text-sm text-gray-900 link-text"
+      className="text-sm text-primary-700 link-text"
       target="_blank"
       rel="noopener noreferrer"
       href={href}
