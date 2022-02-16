@@ -21,16 +21,17 @@ const Index = ({ posts }) => {
     <>
       <PageSEO title="Blog Starter by JC Olamendy" description="Blog Starter will help you build your blog platform faster" />
       <div className="divide-y divide-primary-200">
-        <div className="flex flex-col justify-center items-center space-y-2 py-2 md:space-y-5 md:py-6">
+        <div className="flex flex-col justify-center items-center space-y-2 py-2 md:space-y-5 md:py-12">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-800 sm:text-4xl sm:leading-10 md:text-5xl md:leading-12">
             Get Exclusive Tips
           </h1>
           <p className="text-xl leading-7 text-gray-600">
             {siteMetadata.meta.blogsDescription}
           </p>
-          <div className="flex justify-center items-center w-full py-4 sm:py-6">
-            <NewsletterForm />
-          </div>
+          { siteMetadata.newsletter && siteMetadata.newsletter.provider && 
+          (<div className="flex justify-center items-center w-full py-4 sm:py-6">
+             <NewsletterForm /> 
+          </div>)}
         </div>
         <ul className="divide-y divide-primary-400">
           {!posts.length && 'No posts found.'}
