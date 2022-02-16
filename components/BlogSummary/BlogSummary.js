@@ -29,9 +29,9 @@ const BlogSummary = ({slug, date, title, summary, tags, authorName, headerImage}
       </p>
     </header>
     <div className="flex flex-col mt-2 sm:mt-4">
-      <figure className="h-64 w-full relative">
-        { headerImage && <Image src={headerImage} alt={title} title={title} layout="fill" objectFit="cover" /> }
-      </figure>
+      { headerImage && (<figure className="h-64 w-full relative">
+        <Image src={headerImage} alt={title} title={title} layout="fill" objectFit="cover" />
+      </figure>)}
       <div className="text-base text-gray-500 mt-3 sm:mt-5">
         {summary}
       </div>

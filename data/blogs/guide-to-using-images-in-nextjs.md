@@ -4,7 +4,9 @@ date: '2022-02-11'
 tags: ['next js', 'guide']
 draft: false
 summary: 'In this article we introduce adding images in the tailwind starter blog and the benefits and limitations of the next/image component.'
-images: ['/static/images/nextjs/guide-to-using-images-in-nextjs.jpg']
+headerImage: '/static/images/nextjs/guide-to-using-images-in-nextjs.jpg'
+ogImage: '' 
+twImage: ''
 author: {'name': 'Juan C. Olamendy', 'slug': 'juancolamendy'}
 ---
 

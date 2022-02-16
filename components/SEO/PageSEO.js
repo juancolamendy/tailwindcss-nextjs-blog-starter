@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import CommonSEO from './CommonSEO';
 
 import siteMetadata from '../../data/siteMetadata';
-import { buildPageSchema } from './seoschema'; 
+import { buildPageSchema } from './seoschema';
 
 const PageSEO = ({ title, description, ogImage, twImage }) => {
   // hooks

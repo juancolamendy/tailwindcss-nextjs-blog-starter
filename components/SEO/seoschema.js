@@ -1,3 +1,5 @@
+import { formatToISO } from '../../lib/utils/dateutils';
+
 export const buildCommonSchema = (siteUrl, siteName, siteLogo, siteTwitter, author, authorSlug, authorDescription, authorImage, authorLinkedIn, authorTwitter) => {
     return (`
     {
@@ -63,7 +65,6 @@ export const buildCommonSchema = (siteUrl, siteName, siteLogo, siteTwitter, auth
 };
 
 export const buildPageSchema = (url, title, description, domain, date) => {
-  const dtToday = new Date();
   return (`
   {
   "@context":"https://schema.org",
@@ -73,8 +74,8 @@ export const buildPageSchema = (url, title, description, domain, date) => {
         "@id": "${url}#webpage",
         "url": "${url}",
         "name": "${title}",
-        "datePublished": "${date || dtToday.toISOString()}",
-        "dateModified": "${date || dtToday.toISOString()}",
+        "datePublished": "${formatToISO(date)}",
+        "dateModified": "${formatToISO(date)}",
         "description": "${description}",
         "isPartOf": {
           "@id": "${domain}/#website"
@@ -85,7 +86,6 @@ export const buildPageSchema = (url, title, description, domain, date) => {
 };
 
 export const buildBlogSchema = (url, title, description, domain, authorSlug, ogImage, date) => {
-  const dtToday = new Date();
   return (`
   {
   "@context":"https://schema.org",
@@ -97,8 +97,8 @@ export const buildBlogSchema = (url, title, description, domain, authorSlug, ogI
         "url": "${url}",
         "description": "${description}",
         "image": "${ogImage}",
-        "dateModified": "${date || dtToday.toISOString()}",
-        "datePublished": "${date || dtToday.toISOString()}",
+        "dateModified": "${formatToISO(date)}",
+        "datePublished": "${formatToISO(date)}",
         "author":{
           "@id":"${domain}/people/${authorSlug}/#person"
         },

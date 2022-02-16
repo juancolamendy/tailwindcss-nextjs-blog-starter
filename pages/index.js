@@ -36,7 +36,7 @@ const Index = ({ posts }) => {
         <ul className="divide-y divide-primary-400">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, constants.MaxDisplay).map(frontMatter => {
-            const { slug, date, title, summary, tags, author, images } = frontMatter;
+            const { slug, date, title, summary, tags, author, headerImage } = frontMatter;
             return (
             <li key={slug} className="py-6 sm:py-10">
               <BlogSummary
@@ -46,7 +46,7 @@ const Index = ({ posts }) => {
                 summary={summary}
                 tags={tags}
                 authorName={author.name}
-                headerImage={ (images && images.length > 0 ) ? images[0] : ''}
+                headerImage={headerImage}
               />
             </li>
             )
