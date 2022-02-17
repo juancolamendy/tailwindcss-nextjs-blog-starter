@@ -85,7 +85,7 @@ export const buildPageSchema = (url, title, description, domain, date) => {
   `);
 };
 
-export const buildBlogSchema = (url, title, description, domain, authorSlug, ogImage, date) => {
+export const buildPostSchema = (url, title, description, domain, authorSlug, ogImage, date) => {
   return (`
   {
   "@context":"https://schema.org",

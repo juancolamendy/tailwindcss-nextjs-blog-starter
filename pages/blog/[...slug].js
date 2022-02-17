@@ -34,9 +34,6 @@ export async function getStaticProps({ params }) {
 
 const Post = ({ post, author, prev, next }) => {
   const { mdxSource, toc, frontMatter } = post;
-  console.log('--- toc:', toc);
-  console.log('--- frontMatter:', frontMatter);
-  console.log('--- author:', author);
   return (
   <>
     {frontMatter.draft !== true ? (

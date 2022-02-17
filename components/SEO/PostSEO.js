@@ -9,9 +9,9 @@ import CommonSEO from './CommonSEO';
 import { formatToISO } from '../../lib/utils/dateutils';
 
 import siteMetadata from '../../data/siteMetadata';
-import { buildBlogSchema } from './seoschema'; 
+import { buildPostSchema } from './seoschema'; 
 
-const BlogSEO = ({title, description, authorSlug, ogImage, twImage, date, lastmod}) => {
+const PostSEO = ({title, description, authorSlug, ogImage, twImage, date, lastmod}) => {
   // hooks
   const router = useRouter();
 
@@ -33,7 +33,7 @@ const BlogSEO = ({title, description, authorSlug, ogImage, twImage, date, lastmo
           type='application/ld+json' 
           dangerouslySetInnerHTML={ { __html: 
           `
-          ${buildBlogSchema(`${siteMetadata.site.url}${router.asPath}`, title, description, siteMetadata.site.url, authorSlug, ogImage, date)}
+          ${buildPostSchema(`${siteMetadata.site.url}${router.asPath}`, title, description, siteMetadata.site.url, authorSlug, ogImage, date)}
           `}} 
       />      
     </Head>
@@ -42,11 +42,14 @@ const BlogSEO = ({title, description, authorSlug, ogImage, twImage, date, lastmo
 
 };
 
-BlogSEO.propTypes = {
+PostSEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
+  authorSlug: PropTypes.string,
   ogImage: PropTypes.string,
   twImage: PropTypes.string,
+  date: PropTypes.string,
+  lastmod: PropTypes.string,
 };
 
-export default BlogSEO;
+export default PostSEO;
