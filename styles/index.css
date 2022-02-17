@@ -1,0 +1,19 @@
+.link-text {
+  @apply transition duration-300 ease-in-out hover:opacity-60;
+}
+
+figure:not([class]), p:not([class]) { 
+  @apply mt-4 mb-2;
+}
+
+ul:not([class]), ol:not([class]) { 
+  @apply m-2;
+}
+
+li:not([class]) { 
+  @apply ml-8;
+}
+
+li:not([class]) { 
+  @apply list-disc;
+}

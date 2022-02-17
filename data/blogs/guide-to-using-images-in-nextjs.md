@@ -45,15 +45,15 @@ Assuming we have a file called `ocean.jpg` in `data/img/ocean.jpg`, the followin
 Alternatively, since we are using mdx, we can just use the image component directly! Note, that you would have to provide a fixed width and height. The `img` tag method parses the dimension automatically.
 
 ```js
-<Image alt="ocean" src="/static/images/ocean.jpg" width={256} height={128} />
+<Image alt="ocean" src="/static/images/nextjs/guide-to-using-images-in-nextjs.jpg" width={256} height={128} />
 ```
 
 For example,
-<Image alt="ocean" src="/static/images/ocean.jpg" width={256} height={128} />
+<Image alt="ocean" src="/static/images/nextjs/guide-to-using-images-in-nextjs.jpg" width={300} height={128} />
 
 _Note_: If you try to save the image, it is in webp format, if your browser supports it!
 
-![ocean](/static/images/ocean.jpeg)
+![ocean](/static/images/nextjs/guide-to-using-images-in-nextjs.jpg)
 
 <p>
   Photo by [YUCAR
@@ -74,9 +74,9 @@ _Note_: If you try to save the image, it is in webp format, if your browser supp
 
 - Due to the reliance on `next/image`, unless you are using an external image CDN like Cloudinary or Imgix, it is practically required to use Vercel for hosting. This is because the component acts like a serverless function that calls a highly optimized image CDN.
 
-  If you do not want to be tied to Vercel, you can remove `imgToJsx` in `remarkPlugins` in `lib/mdx.js`. This would avoid substituting the default `img` tag.
+If you do not want to be tied to Vercel, you can remove `imgToJsx` in `remarkPlugins` in `lib/mdx.js`. This would avoid substituting the default `img` tag.
 
-  Alternatively, one could wait for image optimization at build time to be supported. A different library, [next-optimized-images](https://github.com/cyrilwanner/next-optimized-images) does that, although it requires transforming the images through webpack which is not done here.
+Alternatively, one could wait for image optimization at build time to be supported. A different library, [next-optimized-images](https://github.com/cyrilwanner/next-optimized-images) does that, although it requires transforming the images through webpack which is not done here.
 
 - Images from external links are not passed through `next/image`
 - All images have to be stored in the `public` folder e.g `/static/images/ocean.jpeg`

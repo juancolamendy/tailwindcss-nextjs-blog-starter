@@ -1,4 +1,3 @@
-
 const PostLayout = ({ children }) => {
   return (
   <>

@@ -1,23 +1,28 @@
-import { useState, useRef } from 'react'
+import { useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 
-const Pre = (props) => {
-  const textInput = useRef(null)
-  const [hovered, setHovered] = useState(false)
-  const [copied, setCopied] = useState(false)
+import classNames from "classnames";
+
+const Pre = ({children}) => {
+  const textInput = useRef(null);
+  const [hovered, setHovered] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const onEnter = () => {
-    setHovered(true)
+    setHovered(true);
   }
+
   const onExit = () => {
-    setHovered(false)
-    setCopied(false)
+    setHovered(false);
+    setCopied(false);
   }
+  
   const onCopy = () => {
-    setCopied(true)
-    navigator.clipboard.writeText(textInput.current.textContent)
+    setCopied(true);
+    navigator.clipboard.writeText(textInput.current.textContent);
     setTimeout(() => {
-      setCopied(false)
-    }, 2000)
+      setCopied(false);
+    }, 2000);
   }
 
   return (
@@ -63,9 +68,15 @@ const Pre = (props) => {
         </button>
       )}
 
-      <pre>{props.children}</pre>
+      <pre>
+        {children}
+      </pre>
     </div>
   )
 }
+
+Pre.propTypes = {
+	children: PropTypes.node
+};
 
 export default Pre;

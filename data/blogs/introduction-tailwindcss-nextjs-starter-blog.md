@@ -13,7 +13,7 @@ author: {'name': 'Juan C. Olamendy', 'slug': 'juancolamendy'}
 
 ![tailwind-nextjs-banner](/static/images/twitter-card.png)
 
-# Tailwind Nextjs Starter Blog
+## Tailwind Nextjs Starter Blog
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/timlrx/tailwind-nextjs-starter-blog)
 
@@ -27,6 +27,7 @@ Feature request? Check the past discussions to see if it has been brought up pre
 
 ## Examples
 
+Here you can find some examples:
 - [Demo Blog](https://tailwind-nextjs-starter-blog.vercel.app/) - this repo
 - [My personal blog](https://www.timlrx.com) - modified to auto-generate blog posts with dates
 - [Aloisdg's cookbook](https://tambouille.vercel.app/) - with pictures and recipes!

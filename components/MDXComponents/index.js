@@ -5,11 +5,13 @@ import { Image } from '../Image';
 import { PostLink } from '../Link';
 import { TOCInline } from '../TOCInline';
 import { Pre } from '../Pre';
+import { PostH2 } from '../PostH2';
 
 export const MDXComponents = {
   Image,
   TOCInline,
   a: PostLink,
+  h2: PostH2,
   pre: Pre,
   wrapper: ({ components, layout, ...rest }) => {
     const Layout = require(`../../layouts/${layout}`).default;
