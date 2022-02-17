@@ -7,7 +7,7 @@ summary: 'In this article we introduce adding images in the tailwind starter blo
 headerImage: '/static/images/nextjs/guide-to-using-images-in-nextjs.jpg'
 ogImage: '' 
 twImage: ''
-author: {'name': 'Juan C. Olamendy', 'slug': 'juancolamendy'}
+author: 'default'
 ---
 
 ## Introduction

@@ -8,7 +8,7 @@ summary: 'Looking for a performant, out of the box template, with all the best i
 headerImage: '/static/images/blogs/introduction-tailwindcss-nextjs-starter-blog.jpg'
 ogImage: '' 
 twImage: ''
-author: {'name': 'Juan C. Olamendy', 'slug': 'juancolamendy'}
+author: 'default'
 ---
 
 ## Tailwind Nextjs Starter Blog

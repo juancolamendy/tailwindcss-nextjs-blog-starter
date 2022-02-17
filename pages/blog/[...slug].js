@@ -24,14 +24,19 @@ export async function getStaticProps({ params }) {
   const prev = allPosts[postIndex + 1] || null;
   const next = allPosts[postIndex - 1] || null;
   const post = await getFileBySlug('blogs', postSlug);
+  // author info
+  const authorSlug = post.frontMatter.author || 'default';
+  const authorData = await getFileBySlug('authors', [authorSlug]);
+  const author = authorData.frontMatter;
   // return result
-  return { props: { post, prev, next } };
+  return { props: { post, author, prev, next } };
 }
 
-const Post = ({ post, prev, next }) => {
+const Post = ({ post, author, prev, next }) => {
   const { mdxSource, toc, frontMatter } = post;
-  console.log('--- toc', toc);
-  console.log('--- frontMatter', frontMatter);
+  console.log('--- toc:', toc);
+  console.log('--- frontMatter:', frontMatter);
+  console.log('--- author:', author);
   return (
   <>
     {frontMatter.draft !== true ? (
@@ -40,7 +45,7 @@ const Post = ({ post, prev, next }) => {
         toc={toc}
         mdxSource={mdxSource}
         frontMatter={frontMatter}
-        authorDetails={''}
+        author={author}
         prev={prev}
         next={next}
       />
