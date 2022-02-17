@@ -11,8 +11,6 @@ twImage: ''
 author: {'name': 'Juan C. Olamendy', 'slug': 'juancolamendy'}
 ---
 
-![tailwind-nextjs-banner](/static/images/twitter-card.png)
-
 ## Tailwind Nextjs Starter Blog
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/timlrx/tailwind-nextjs-starter-blog)

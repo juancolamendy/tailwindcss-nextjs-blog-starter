@@ -1,5 +1,7 @@
 import { getFiles, formatSlug, getAllFilesFrontMatter, getFileBySlug } from '../../lib/mdx';
+
 import { MDXLayoutRenderer } from '../../components/MDXComponents';
+import { PostH1 } from '../../components/PostH1';
 
 export async function getStaticPaths() {
   const posts = getFiles('blogs');
@@ -44,12 +46,12 @@ const Post = ({ post, prev, next }) => {
       />
     ) : (
       <div className="mt-24 text-center">
-        <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-700 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+        <PostH1>
           Under Construction{' '}
           <span role="img" aria-label="roadwork sign">
             🚧
           </span>
-        </h1>
+        </PostH1>
       </div>
     )}
   </>
