@@ -11,7 +11,7 @@ const BlogSummary = ({slug, date, title, summary, tags, authorName, headerImage}
   return (
   <article className="flex flex-col">
     <header className="flex flex-col space-y-1 sm:space-y-2">
-      <h2 className="text-3xl font-bold leading-8 tracking-tight link-text">
+      <h2 className="text-2xl font-bold leading-9 text-gray-800 sm:text-3xl sm:leading-10">
         <Link
           href={`/blog/${slug}`}
           className="text-primary-700"

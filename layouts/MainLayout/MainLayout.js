@@ -6,9 +6,11 @@ import Footer from './Footer';
 
 const MainLayout = ({children}) => {
   return (
-  <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 flex h-screen flex-col justify-between">
+  <div className="flex flex-col justify-between h-screen">
     <Header />
-    <main className="mb-auto">{children}</main>
+    <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+      <main className="mb-auto">{children}</main>
+    </div>
     <Footer />
   </div>
   );
