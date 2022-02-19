@@ -5,7 +5,10 @@ lastmod: '2022-02-10'
 tags: ['next-js', 'tailwind', 'guide']
 draft: false
 summary: 'Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Checkout the Tailwind Nextjs Starter Blog template.'
+headerIntroduction: 'Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Here is what we learned about it.'
 headerImage: '/static/images/blogs/introduction-tailwindcss-nextjs-starter-blog.jpg'
+headerGradient: 'bg-gradient-to-r from-green-300 via-blue-500 to-purple-600' 
+headerTextColor: 'white'
 ogImage: '' 
 twImage: ''
 author: 'default'

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import classNames from 'classnames';
+
 import { PostSEO } from '../../components/SEO';
 
 const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
@@ -18,13 +20,16 @@ const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
       lastmod={frontMatter.lastmod}
     />
     <section>
-      <div className="flex flex-col justify-center items-center space-y-4 py-10 bg-primary-100 sm:space-y-6 sm:py-14 md:space-y-8 md:py-16">
-        <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-800 sm:text-4xl sm:leading-10 md:text-5xl md:leading-12">
-          Get Exclusive Tips
-        </h1>
-        <p className="text-xl leading-7 text-gray-600">
-          description
-        </p>
+      <div 
+        className={classNames('text-center', frontMatter.headerGradient ? frontMatter.headerGradient : 'bg-primary-100', frontMatter.headerTextColor ? `text-${frontMatter.headerTextColor}` : '')}>
+        <div className="flex flex-col justify-start items-center mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 space-y-4 pt-10 pb-20 sm:space-y-6 sm:pt-12 sm:pb-22 md:space-y-8 md:pt-14 md:pb-24">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight sm:text-4xl sm:leading-10 md:text-5xl md:leading-12">
+            {frontMatter.title}
+          </h1>
+          <p className="text-xl leading-7 font-light">
+            {frontMatter.headerIntroduction || frontMatter.summary}
+          </p>
+        </div>
       </div>
     </section>
     <main className="mb-auto">
