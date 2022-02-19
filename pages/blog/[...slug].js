@@ -1,4 +1,4 @@
-import { getFiles, formatSlug, getAllFilesFrontMatter, getFileBySlug } from '../../lib/mdx';
+import { getFiles, formatSlug, getAllFilesFrontMatter, getBlogBySlug } from '../../lib/mdx';
 
 import { MDXLayoutRenderer } from '../../components/MDXComponents';
 import { PostH1 } from '../../components/PostH1';
@@ -23,16 +23,12 @@ export async function getStaticProps({ params }) {
   const postIndex = allPosts.findIndex(post => formatSlug(post.slug) === postSlug);
   const prev = allPosts[postIndex + 1] || null;
   const next = allPosts[postIndex - 1] || null;
-  const post = await getFileBySlug('blogs', postSlug);
-  // author info
-  const authorSlug = post.frontMatter.author || 'default';
-  const authorData = await getFileBySlug('authors', [authorSlug]);
-  const author = authorData.frontMatter;
+  const post = await getBlogBySlug(postSlug);
   // return result
-  return { props: { post, author, prev, next } };
+  return { props: { post, prev, next } };
 }
 
-const Post = ({ post, author, prev, next }) => {
+const Post = ({ post, prev, next }) => {
   const { mdxSource, toc, frontMatter } = post;
   return (
   <>
@@ -42,7 +38,6 @@ const Post = ({ post, author, prev, next }) => {
         toc={toc}
         mdxSource={mdxSource}
         frontMatter={frontMatter}
-        author={author}
         prev={prev}
         next={next}
       />

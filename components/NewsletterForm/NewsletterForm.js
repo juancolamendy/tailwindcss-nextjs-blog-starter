@@ -37,7 +37,7 @@ const NewsletterForm = () => {
   return (
   <div className="flex flex-col justify-center items-center w-full">
     <form 
-      className="flex flex-col w-full sm:flex-row sm:w-5/12"
+      className="flex flex-col w-full sm:flex-row"
       onSubmit={handleSubmit(handleFormData)}
       noValidate
     >

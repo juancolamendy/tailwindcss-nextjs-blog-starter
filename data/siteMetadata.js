@@ -25,7 +25,7 @@ const siteMetadata = {
 
   newsletter: {
     // mailchimp, buttondown, convertkit, klaviyo
-    provider: '',
+    provider: 'buttondown',
     signupLabel: 'Sign up',
     subscribedMsg: 'You\'re subscribed!  🎉',
     thankyouMsg: 'Thank you!',

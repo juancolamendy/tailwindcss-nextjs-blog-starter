@@ -7,14 +7,14 @@ import { Image } from '../Image';
 
 import { formatDate } from '../../lib/utils/dateutils';
 
-const BlogSummary = ({slug, date, title, summary, tags, authorName, headerImage}) => {
+const BlogSummary = ({slug, date, title, summary, tags, authorName, authorSlug, headerImage}) => {
   return (
   <article className="flex flex-col">
     <header className="flex flex-col space-y-1 sm:space-y-2">
-      <h2 className="text-2xl font-bold leading-9 text-gray-800 sm:text-3xl sm:leading-10">
+      <h2 className="text-3xl font-bold leading-9 text-gray-800 sm:text-3xl sm:leading-10">
         <Link
           href={`/blog/${slug}`}
-          className="text-primary-700"
+          className="text-primary-700 link-text"
         >
           {title}
         </Link>
@@ -25,7 +25,7 @@ const BlogSummary = ({slug, date, title, summary, tags, authorName, headerImage}
         ))}
       </div>
       <p className="text-xs">
-        By <span className="font-medium leading-6 text-gray-500">{authorName}</span> · Published on <span className="font-medium leading-6 text-gray-500"><time dateTime={date}>{formatDate(date)}</time></span>
+        By <Link href={`/authors/${authorSlug}`} className="font-medium leading-6 text-gray-500 link-text">{authorName}</Link> · Published on <span className="font-medium leading-6 text-gray-500"><time dateTime={date}>{formatDate(date)}</time></span>
       </p>
     </header>
     <div className="flex flex-col mt-2 sm:mt-4">
@@ -56,6 +56,7 @@ BlogSummary.propTypes = {
   summary: PropTypes.string,
   tags: PropTypes.array,
   authorName: PropTypes.string,
+  authorSlug: PropTypes.string,
   headerImage: PropTypes.string,
 };
 
