@@ -5,8 +5,8 @@ tags: ['next js', 'guide']
 draft: false
 summary: 'In this article we introduce adding images in the tailwind starter blog and the benefits and limitations of the next/image component.'
 headerImage: '/static/images/nextjs/guide-to-using-images-in-nextjs.jpg'
-#headerGradient: 'bg-gradient-to-r from-green-300 via-blue-500 to-purple-600' 
-#headerTextColor: 'white'
+headerGradient: 'bg-gradient-to-r from-green-300 via-blue-500 to-purple-600' 
+headerTextColor: 'white'
 ogImage: '' 
 twImage: ''
 author: 'default'
