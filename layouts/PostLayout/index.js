@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Link } from '../../components/Link';
 import { PostSEO } from '../../components/SEO';
-import { PostHeader, PostToc } from '../../components/Post';
+import { PostHeader, PostToc, PostSharer } from '../../components/Post';
 
 const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
   console.log('--- toc:', toc);
@@ -21,6 +21,7 @@ const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
     />
     <main role="document">
       <article>
+        <PostSharer />
         <PostHeader frontMatter={frontMatter} />
         <PostToc toc={toc} />
         <section className="mb-auto" role="content">
