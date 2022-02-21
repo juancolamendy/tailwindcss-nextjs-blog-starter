@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Link } from '../../components/Link';
 import { PostSEO } from '../../components/SEO';
-import { PostHeader, PostToc, PostSharer, PostFooter } from '../../components/Post';
+import { PostHeader, PostToc, PostSharer, PostFooter, PostComment } from '../../components/Post';
 
 const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
   console.log('--- toc:', toc);
@@ -29,6 +29,7 @@ const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
             <div role="post-content">
               {children}
             </div>
+            <PostComment frontMatter={frontMatter} />
             <PostFooter tags={frontMatter.tags} prev={prev} next={next} />
           </div>
         </section>
