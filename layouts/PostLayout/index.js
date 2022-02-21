@@ -21,7 +21,7 @@ const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
     />
     <main role="document">
       <article>
-        <PostSharer />
+        <PostSharer title={frontMatter.title} />
         <PostHeader frontMatter={frontMatter} />
         <PostToc toc={toc} />
         <section className="mb-auto" role="content">
