@@ -12,11 +12,18 @@ const DisqusComponent = dynamic(
   { ssr: false }
 );
 
+const UtterancesComponent = dynamic(
+  () => {
+    return import('./Utterances')
+  },
+  { ssr: false }
+);
+
 const PostComment = ({ frontMatter }) => {
   let term;
   switch (
     siteMetadata.comment.giscusConfig.mapping ||
-    siteMetadata.comment.utterancesConfig.issueTerm
+    siteMetadata.comment.utterances.issueTerm
   ) {
     case 'pathname':
       term = frontMatter.slug;
@@ -32,6 +39,9 @@ const PostComment = ({ frontMatter }) => {
   <div role="post-comment" className="flex justify-center items-center pt-6 pb-4">
     {siteMetadata.comment && siteMetadata.comment.provider === 'disqus' && (
       <DisqusComponent frontMatter={frontMatter} />
+    )}
+    {siteMetadata.comment && siteMetadata.comment.provider === 'utterances' && (
+      <UtterancesComponent issueTerm={term} />
     )}
   </div>
   );
