@@ -1,7 +1,7 @@
 import { getAllFilesFrontMatter } from '../lib/mdx';
 
 import { PageSEO } from '../components/SEO';
-import { BlogSummary } from '../components/BlogSummary';
+import { PostSummary } from '../components/PostSummary';
 import { Link } from '../components/Link';
 import { NewsletterForm } from '../components/NewsletterForm';
 
@@ -43,7 +43,7 @@ const Index = ({ posts }) => {
                 const { slug, date, title, summary, tags, authorDetails, headerImage } = frontMatter;
                 return (
                 <li key={slug} className="py-6 sm:py-10">
-                  <BlogSummary
+                  <PostSummary
                     slug={slug} 
                     date={date}
                     title={title}

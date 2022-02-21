@@ -7,7 +7,7 @@ import { Image } from '../Image';
 
 import { formatDate } from '../../lib/utils/dateutils';
 
-const BlogSummary = ({slug, date, title, summary, tags, authorName, authorSlug, headerImage}) => {
+const PostSummary = ({slug, date, title, summary, tags, authorName, authorSlug, headerImage}) => {
   return (
   <article className="flex flex-col">
     <header className="flex flex-col space-y-1 sm:space-y-2">
@@ -49,7 +49,7 @@ const BlogSummary = ({slug, date, title, summary, tags, authorName, authorSlug, 
   );
 };
 
-BlogSummary.propTypes = {
+PostSummary.propTypes = {
   slug: PropTypes.string,
   date: PropTypes.string,
   title: PropTypes.string,
@@ -60,4 +60,4 @@ BlogSummary.propTypes = {
   headerImage: PropTypes.string,
 };
 
-export default BlogSummary;
+export default PostSummary;
