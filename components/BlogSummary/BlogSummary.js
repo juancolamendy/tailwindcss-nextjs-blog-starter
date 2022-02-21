@@ -25,7 +25,7 @@ const BlogSummary = ({slug, date, title, summary, tags, authorName, authorSlug, 
         ))}
       </div>
       <p className="text-xs">
-        By <Link href={`/authors/${authorSlug}`} className="font-medium leading-6 text-gray-500 link-text">{authorName}</Link> · Published on <span className="font-medium leading-6 text-gray-500"><time dateTime={date}>{formatDate(date)}</time></span>
+        By <Link href={`/authors/${authorSlug}`} className="font-medium leading-6 text-gray-500 link-text">{authorName}</Link> · Updated: <span className="font-medium leading-6 text-gray-500"><time dateTime={date}>{formatDate(date)}</time></span>
       </p>
     </header>
     <div className="flex flex-col mt-2 sm:mt-4">

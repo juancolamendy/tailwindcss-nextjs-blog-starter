@@ -7,7 +7,7 @@ draft: false
 summary: 'Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Checkout the Tailwind Nextjs Starter Blog template.'
 headerIntroduction: 'Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Here is what we learned about it.'
 headerImage: '/static/images/blogs/introduction-tailwindcss-nextjs-starter-blog.jpg'
-headerGradient: 'bg-gradient-to-r from-red-200 via-red-300 to-yellow-200' 
+headerGradient: 'bg-gradient-to-r from-indigo-300 to-purple-400' 
 headerTextColor: 'white'
 ogImage: '' 
 twImage: ''
