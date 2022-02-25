@@ -5,8 +5,8 @@ import { PostSEO } from '../../components/SEO';
 import { PostHeader, PostToc, PostSharer, PostFooter, PostComment } from '../../components/Post';
 
 const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
-  console.log('--- toc:', toc);
-  console.log('--- frontMatter:', frontMatter);
+  // console.log('--- toc:', toc);
+  // console.log('--- frontMatter:', frontMatter);
   return (
   <>
     <PostSEO
