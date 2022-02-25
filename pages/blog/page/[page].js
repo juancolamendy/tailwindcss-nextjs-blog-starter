@@ -1,5 +1,8 @@
+import { PageSEO } from '../../../components/SEO';
+
 import constant from '../../../lib/utils/constants';
 import { getAllFilesFrontMatter, getFiles } from '../../../lib/mdx';
+import siteMetadata from '../../../data/siteMetadata';
 
 export async function getStaticPaths() {
   const posts = getFiles('blogs');
@@ -23,7 +26,12 @@ const PostPage = ({ posts, currentPage }) => {
   console.log('posts:', posts);
   console.log('currentPage:', currentPage);
 
-  return (<>All Paged Blogs</>);
+  return (
+  <>
+    <PageSEO title={siteMetadata.meta.title} description={siteMetadata.meta.description} />
+    All Paged Blogs
+  </>
+  );
 };
 
 export default PostPage;
