@@ -10,7 +10,7 @@ const PostSharer = ({title}) => {
   const router = useRouter();
   
   return (
-  <div className="hidden fixed top-40 left-40 w-20 z-10 bg-white rounded-md border-2 border-gray-100 py-4 px-2 flex-col justify-center items-center space-y-4 md:flex" role="sharer">
+  <div className="hidden fixed top-40 left-2 lg:left-40 w-20 z-10 bg-white rounded-md border-2 border-gray-100 py-4 px-2 flex-col justify-center items-center space-y-4 md:flex" role="sharer">
     <a 
       href={`https://twitter.com/share?text=${encodeURIComponent(title)}&url=${encodeURIComponent(siteMetadata.site.url+router.asPath)}&via=${siteMetadata.site.name}`} 
       title="Share on Twitter" 

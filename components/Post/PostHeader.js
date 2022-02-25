@@ -11,7 +11,7 @@ const PostHeader = ({ frontMatter }) => {
   <header>
     <div 
       className={classNames('text-center', frontMatter.headerGradient ? frontMatter.headerGradient : 'bg-primary-100', frontMatter.headerTextColor ? `text-${frontMatter.headerTextColor}` : '')}>
-      <div className="flex flex-col justify-start items-center mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 space-y-4 pt-14 pb-20 sm:space-y-6 sm:pt-16 sm:pb-22 md:space-y-8 md:pt-30 md:pb-40">
+      <div className="flex flex-col justify-start items-center mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-5xl xl:px-0 space-y-4 pt-14 pb-20 sm:space-y-6 sm:pt-16 sm:pb-22 md:space-y-8 md:pt-30 md:pb-40">
         <h1 className="text-3xl font-extrabold leading-9 tracking-tight sm:text-4xl sm:leading-10 md:text-5xl md:leading-12">
           {frontMatter.title}
         </h1>
