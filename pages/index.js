@@ -17,7 +17,7 @@ const Index = ({ posts }) => {
   // console.log('posts:', posts);
   return (
     <>
-      <PageSEO title="Blog Starter by JC Olamendy" description="Blog Starter will help you build your blog platform faster" />
+      <PageSEO title={siteMetadata.meta.title} description={siteMetadata.meta.description} />
       <section>
         <div className="flex flex-col justify-center items-center space-y-4 py-10 bg-primary-100 sm:space-y-6 sm:py-14 md:space-y-8 md:py-16">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-800 sm:text-4xl sm:leading-10 md:text-5xl md:leading-12">
