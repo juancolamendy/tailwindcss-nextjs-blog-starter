@@ -6,7 +6,6 @@ import { Image } from '../../components/Image';
 import { PageSEO } from '../../components/SEO';
 
 const AuthorLayout = ({ children, frontMatter }) => {
-  console.log('--- frontmatter:', frontMatter);
   return (
     <>
       <PageSEO title={`About - ${frontMatter.name}`} description={`About me - ${frontMatter.name}`} />
