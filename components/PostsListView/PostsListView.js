@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 import { SearchBox } from '../SearchBox';
@@ -11,26 +11,34 @@ const PostsListView = ({title, posts, currentPage}) => {
   // state
   const [searchValue, setSearchValue] = useState('');
 
-  // calculations
-  const displayPosts = posts;
-  const pagination = {
+  // hooks
+  const filteredPosts = useMemo(() => {
+    if(!searchValue) {
+      return posts;
+    }
+    return posts.filter(x => {
+      const searchContent = x.title + x.summary + x.tags.join(' ');
+      return searchContent.toLowerCase().includes(searchValue.toLowerCase());
+    });
+  }, [searchValue, posts]);
+
+  const pagination = useMemo(()=>({
     currentPage,
     totalPages: Math.ceil(posts.length / constant.PostsPerPage),
-  };
+  }), [currentPage, posts]);
 
-  console.log('--- searchValue:', searchValue);
   // render out
   return (
   <div className="divide-y">
     <div className="space-y-2 pt-6 pb-8 md:space-y-5 sm:pt-10 sm:pb-12 sm:pt-14 sm:pb-16">
-      <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+      <h1 className="blog-h1">
         {title}
       </h1>
       <SearchBox onChange={ e => setSearchValue(e.target.value) } />
     </div>
     <ul className="divide-y">
-      {!displayPosts.length && 'No posts found.'}
-      {displayPosts.map( frontMatter => {
+      {!filteredPosts.length && 'No posts found.'}
+      {filteredPosts.map( frontMatter => {
         const { slug, date, title, summary, tags, authorDetails, headerImage } = frontMatter;
         return (
         <li key={slug} className="py-6 sm:py-10">
