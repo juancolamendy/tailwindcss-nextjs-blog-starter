@@ -1,7 +1,7 @@
 ---
 name: Juan C Olamendy
 avatar: /static/images/jcolamendy-avatar.jpeg
-occupation: Cloud Senior Software Engineer | Full-stack development | Indie Hacker
+summary: Cloud Senior Software Engineer | Full-stack development | Indie Hacker
 company: Company
 email: address@yoursite.com
 twitter: https://twitter.com/juancolamendy

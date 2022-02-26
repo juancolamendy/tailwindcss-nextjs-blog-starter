@@ -25,9 +25,6 @@ export async function getStaticProps({ params }) {
 }
 
 const PostPage = ({ posts, currentPage }) => {
-  console.log('posts:', posts);
-  console.log('currentPage:', currentPage);
-
   return (
   <>
     <PageSEO title={siteMetadata.meta.title} description={siteMetadata.meta.description} />

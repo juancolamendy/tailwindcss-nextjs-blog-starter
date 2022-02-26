@@ -5,8 +5,6 @@ import { PostSEO } from '../../components/SEO';
 import { PostHeader, PostToc, PostSharer, PostFooter, PostComment } from '../../components/Post';
 
 const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
-  // console.log('--- toc:', toc);
-  // console.log('--- frontMatter:', frontMatter);
   return (
   <>
     <PostSEO
@@ -40,6 +38,10 @@ const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
 
 PostLayout.propTypes = {
   children: PropTypes.node,
+  frontMatter: PropTypes.object,
+	toc: PropTypes.array,
+  prev: PropTypes.object,
+  next: PropTypes.object,
 };
 
 export default PostLayout;
