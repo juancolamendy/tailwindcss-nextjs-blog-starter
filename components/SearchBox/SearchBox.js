@@ -9,7 +9,7 @@ const SearchBox = ({ onChange }) => {
       type="text"
       onChange={onChange}
       placeholder="Search"
-      className="block w-full rounded-md border border-primary-300 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+      className="block blog-input"
     />
     <svg
       className="absolute right-3 top-3 h-5 w-5 text-primary-400"

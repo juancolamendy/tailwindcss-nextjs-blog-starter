@@ -18,6 +18,7 @@ const PostsListView = ({title, posts, currentPage}) => {
     totalPages: Math.ceil(posts.length / constant.PostsPerPage),
   };
 
+  console.log('--- searchValue:', searchValue);
   // render out
   return (
   <div className="divide-y">
@@ -25,7 +26,7 @@ const PostsListView = ({title, posts, currentPage}) => {
       <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
         {title}
       </h1>
-      <SearchBox />
+      <SearchBox onChange={ e => setSearchValue(e.target.value) } />
     </div>
     <ul>
       {!displayPosts.length && 'No posts found.'}

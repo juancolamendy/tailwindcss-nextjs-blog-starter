@@ -47,7 +47,7 @@ const NewsletterForm = () => {
         </label>
         <input
           autoComplete="email"
-          className="w-full h-12 px-4 py-2 border-2 rounded-md focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500"
+          className="h-12 blog-input"
           id="email-input"
           name="email"
           placeholder={subscribed ? siteMetadata.newsletter.subscribedMsg : 'Email Address'}
