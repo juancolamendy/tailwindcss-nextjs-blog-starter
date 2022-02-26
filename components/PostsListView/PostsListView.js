@@ -22,13 +22,13 @@ const PostsListView = ({title, posts, currentPage}) => {
   // render out
   return (
   <div className="divide-y">
-    <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+    <div className="space-y-2 pt-6 pb-8 md:space-y-5 sm:pt-10 sm:pb-12 sm:pt-14 sm:pb-16">
       <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
         {title}
       </h1>
       <SearchBox onChange={ e => setSearchValue(e.target.value) } />
     </div>
-    <ul>
+    <ul className="divide-y">
       {!displayPosts.length && 'No posts found.'}
       {displayPosts.map( frontMatter => {
         const { slug, date, title, summary, tags, authorDetails, headerImage } = frontMatter;
