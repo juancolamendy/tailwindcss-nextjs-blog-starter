@@ -1,7 +1,7 @@
 import { getFiles, formatSlug, getAllFilesFrontMatter, getBlogBySlug } from '../../lib/mdx';
 
 import { MDXLayoutRenderer } from '../../components/MDXComponents';
-import { PostH1 } from '../../components/PostH1';
+import { PostH1 } from '../../components/Post';
 
 export async function getStaticPaths() {
   const posts = getFiles('blogs');

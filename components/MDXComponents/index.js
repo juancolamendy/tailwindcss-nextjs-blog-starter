@@ -5,8 +5,8 @@ import { Image } from '../Image';
 import { PostLink } from '../Link';
 import { TOCInline } from '../TOCInline';
 import { Pre } from '../Pre';
-import { PostH1 } from '../PostH1';
-import { PostH2 } from '../PostH2';
+import { PostH1 } from '../Post';
+import { PostH2 } from '../Post';
 
 export const MDXComponents = {
   Image,
