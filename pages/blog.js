@@ -1,6 +1,6 @@
 import { PageSEO } from '../components/SEO';
 
-import { PostsListView } from '../components/PostsListView';
+import { PostsPagedListView } from '../components/PostsList';
 
 import { getAllFilesFrontMatter } from '../lib/mdx';
 import siteMetadata from '../data/siteMetadata';
@@ -16,7 +16,7 @@ const Posts = ({ posts, currentPage }) => {
     <PageSEO title={siteMetadata.meta.title} description={siteMetadata.meta.description} />
     <main className="mb-auto">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-        <PostsListView 
+        <PostsPagedListView 
           title="All Blogs"
           posts={posts}
           currentPage={currentPage}

@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
-import { SearchBox } from '../SearchBox';
-import { PostSummary } from '../PostSummary';
-import { Pagination } from '../Pagination';
+import SearchBox from './SearchBox';
+import PostSummary from './PostSummary';
+import Pagination from './Pagination';
 
 import constant from '../../lib/utils/constants';
 
-const PostsListView = ({title, posts, currentPage}) => {
+const PostsPagedListView = ({title, posts, currentPage}) => {
   // state
   const [searchValue, setSearchValue] = useState('');
 
@@ -63,10 +63,10 @@ const PostsListView = ({title, posts, currentPage}) => {
   );
 };
 
-PostsListView.propTypes = {
+PostsPagedListView.propTypes = {
   title: PropTypes.string,
   posts: PropTypes.array,
   currentPage: PropTypes.number,
 };
 
-export default PostsListView;
+export default PostsPagedListView;

@@ -1,7 +1,7 @@
 import { getAllFilesFrontMatter } from '../lib/mdx';
 
 import { PageSEO } from '../components/SEO';
-import { PostSummary } from '../components/PostSummary';
+import { PostSummary } from '../components/PostsList';
 import { Link } from '../components/Link';
 import { NewsletterForm } from '../components/NewsletterForm';
 
