@@ -15,6 +15,9 @@
 # production
 /build
 
+# seo
+public/sitemap.xml
+
 # misc
 .DS_Store
 *.pem
