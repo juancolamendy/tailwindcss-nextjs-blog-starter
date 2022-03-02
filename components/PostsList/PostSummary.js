@@ -13,7 +13,7 @@ const PostSummary = ({slug, date, title, summary, tags, authorName, authorSlug, 
     <header className="flex flex-col space-y-1 sm:space-y-2">
       <h2 className="blog-h2">
         <Link
-          href={`/blog/${slug}`}
+          href={`/blogs/${slug}`}
           className="text-primary-700 link-text"
         >
           {title}

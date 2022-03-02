@@ -30,7 +30,7 @@ const PostsPagedListView = ({title, posts, currentPage}) => {
   // render out
   return (
   <div className="divide-y">
-    <div className="space-y-2 pt-6 pb-8 md:space-y-5 sm:pt-10 sm:pb-12 sm:pt-14 sm:pb-16">
+    <div className="space-y-2 md:space-y-5 py-8 sm:py-10 md:py-12">
       <h1 className="blog-h1">
         {title}
       </h1>

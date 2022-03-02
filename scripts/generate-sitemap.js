@@ -4,6 +4,8 @@ const matter = require('gray-matter');
 const prettier = require('prettier');
 const siteMetadata = require('../data/siteMetadata');
 
+console.log('--- generating sitemap');
+
 ;(async () => {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
   const pages = await globby([
@@ -32,7 +34,7 @@ const siteMetadata = require('../data/siteMetadata');
                 }
                 const path = page
                   .replace('pages/', '/')
-                  .replace('data/blog', '/blog')
+                  .replace('data/blogs', '/blogs')
                   .replace('public/', '/')
                   .replace('.js', '')
                   .replace('.tsx', '')
@@ -41,7 +43,7 @@ const siteMetadata = require('../data/siteMetadata');
                   .replace('/feed.xml', '')
                 const route = path === '/index' ? '' : path
 
-                if (page.search('pages/404.') > -1 || page.search(`pages/blog/[...slug].`) > -1) {
+                if (page.search('pages/404.') > -1 || page.search(`pages/blogs/[...slug].`) > -1) {
                   return
                 }
                 return `
