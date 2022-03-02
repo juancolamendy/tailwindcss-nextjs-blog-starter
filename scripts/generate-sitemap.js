@@ -4,9 +4,8 @@ const matter = require('gray-matter');
 const prettier = require('prettier');
 const siteMetadata = require('../data/siteMetadata');
 
-console.log('--- generating sitemap');
-
 ;(async () => {
+  console.log('--- generating sitemap');
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
   const pages = await globby([
     'pages/*.js',
@@ -63,4 +62,6 @@ console.log('--- generating sitemap');
 
   // eslint-disable-next-line no-sync
   fs.writeFileSync('public/sitemap.xml', formatted)
+  
+  console.log('--- sitemap generated');
 })()
