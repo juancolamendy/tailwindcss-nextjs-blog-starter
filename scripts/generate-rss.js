@@ -105,9 +105,7 @@ function getAllTags(frontMatters) {
 
   const root = process.cwd();
   const allTags = getAllTags(frontMatters);
-  console.log(allTags);
   allTags.forEach(tag => {
-    console.log('tag:', tag);
     const filteredPosts = frontMatters.filter(
       (post) => post.draft !== true && post.tags.map((t) => slug(t)).includes(tag)
     );
