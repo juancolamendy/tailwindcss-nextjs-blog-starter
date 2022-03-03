@@ -1,8 +1,20 @@
 import { PageSEO } from '../components/SEO';
 import { Tag } from '../components/Tag';
+import { Breadcrumb } from '../components/Post';
 
 import siteMetadata from '../data/siteMetadata';
 import { getAllTags } from '../lib/tags'; 
+
+const breadcrum = [
+  {
+    href: '/',
+    text: 'Home'
+  },
+  {
+    href: '/tags',
+    text: 'Tags'
+  }
+];
 
 export async function getStaticProps() {
   const tags = await getAllTags();
@@ -12,6 +24,7 @@ export async function getStaticProps() {
 const Tags = ({ tags }) => {
   return (<>
     <PageSEO title={`Tags - ${siteMetadata.site.name}`} description="Tags - Things we blog about" />
+    <Breadcrumb list={breadcrum} />
     <main className="mb-auto">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
         <div className="flex flex-col items-start justify-start divide-y divide-gray-200 md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
