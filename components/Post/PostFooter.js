@@ -28,7 +28,7 @@ const PostFooter = ({tags, prev, next}) => {
                 Previous Article
               </h2>
               <div className="text-primary-500 hover:text-primary-600">
-                <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
+                <Link href={`/blogs/${prev.slug}`}>{prev.title}</Link>
               </div>
             </div>
           )}
@@ -38,7 +38,7 @@ const PostFooter = ({tags, prev, next}) => {
                 Next Article
               </h2>
               <div className="text-primary-500 hover:text-primary-600">
-                <Link href={`/blog/${next.slug}`}>{next.title}</Link>
+                <Link href={`/blogs/${next.slug}`}>{next.title}</Link>
               </div>
             </div>
           )}
@@ -47,10 +47,10 @@ const PostFooter = ({tags, prev, next}) => {
     </div>
     <div className="pt-4 xl:pt-8">
       <Link
-        href="/"
+        href="/blogs"
         className="text-primary-500 hover:text-primary-600"
       >
-        &larr; Back to the blog
+        &larr; Back to the posts
       </Link>
     </div>
   </section>

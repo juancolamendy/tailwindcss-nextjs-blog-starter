@@ -38,7 +38,7 @@ const PostSummary = ({slug, date, title, summary, tags, authorName, authorSlug, 
     </div>
     <footer className="text-xs font-medium leading-6 mt-3">
       <Link
-        href={`/blog/${slug}`}
+        href={`/blogs/${slug}`}
         className="text-gray-500 link-text"
         aria-label={`Read "${title}"`}
       >

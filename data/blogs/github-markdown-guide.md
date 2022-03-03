@@ -6,14 +6,14 @@ tags: ['github', 'guide']
 draft: false
 summary: 'Markdown cheatsheet for all your blogging needs - headers, lists, images, tables and more! An illustrated guide based on GitHub Flavored Markdown.'
 headerImage: '/static/images/blogs/markdown-guide.jpg'
-headerGradient: 'bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400' 
+headerGradient: 'bg-gradient-to-bl from-gray-400 via-gray-600 to-blue-800' 
 headerTextColor: 'white'
 ogImage: '' 
 twImage: ''
 author: 'default'
 ---
 
-# Introduction
+## Introduction
 
 Markdown and Mdx parsing is supported via `unified`, and other remark and rehype packages. `next-mdx-remote` allows us to parse `.mdx` and `.md` files in a more flexible manner without touching webpack.
 
@@ -21,11 +21,11 @@ GitHub flavored markdown is used. `mdx-prism` provides syntax highlighting capab
 
 The following markdown cheatsheet is adapted from: https://guides.github.com/features/mastering-markdown/
 
-# What is Markdown?
+## What is Markdown?
 
 Markdown is a way to style text on the web. You control the display of the document; formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdown. Mostly, Markdown is just regular text with a few non-alphabetic characters thrown in, like `#` or `*`.
 
-# Syntax guide
+## Syntax guide
 
 Here’s an overview of Markdown syntax that you can use anywhere on GitHub.com or in your own text files.
 
@@ -36,12 +36,16 @@ Here’s an overview of Markdown syntax that you can use anywhere on GitHub.com 
 
 ## This is a h2 tag
 
+### This is a h3 tag
+
 #### This is a h4 tag
 ```
 
 # This is a h1 tag
 
 ## This is a h2 tag
+
+### This is a h3 tag
 
 #### This is a h4 tag
 

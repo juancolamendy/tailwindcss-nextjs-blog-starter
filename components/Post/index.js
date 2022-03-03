@@ -5,4 +5,6 @@ export { default as PostFooter } from './PostFooter';
 export { default as PostComment } from './PostComment';
 export { default as PostH1 } from './PostH1';
 export { default as PostH2 } from './PostH2';
+export { default as PostH3 } from './PostH3';
+export { default as PostH4 } from './PostH4';
 export { default as Breadcrumb } from './Breadcrum';
