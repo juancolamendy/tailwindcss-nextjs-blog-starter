@@ -4,11 +4,24 @@ import PropTypes from 'prop-types';
 import { SocialIcon } from '../../components/SocialIcon';
 import { Image } from '../../components/Image';
 import { PageSEO } from '../../components/SEO';
+import { Breadcrumb } from '../../components/Post';
+
+const breadcrum = [
+  {
+    href: '/',
+    text: 'Home'
+  },
+  {
+    href: '/about',
+    text: 'About'
+  }
+];
 
 const AuthorLayout = ({ children, frontMatter }) => {
   return (
     <>
       <PageSEO title={`About - ${frontMatter.name}`} description={`About me - ${frontMatter.name}`} />
+      <Breadcrumb list={breadcrum} />
       <main className="mb-auto">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
           <div className="divide-y">
