@@ -4,20 +4,20 @@ import PropTypes from 'prop-types';
 import { PostSEO } from '../../components/SEO';
 import { PostHeader, PostToc, PostSharer, PostFooter, PostComment, Breadcrumb } from '../../components/Post';
 
-const breadcrum = [
+const buildBreadcrum = (title) =>  ([
   {
     href: '/',
     text: 'Home'
   },
   {
-    href: '/',
-    text: 'Project'
+    href: '/blogs',
+    text: 'Posts'
   },
   {
     href: '#',
-    text: 'Page'
+    text: title
   } 
-];
+]);
 
 const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
   return (
@@ -35,7 +35,7 @@ const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
       <article>
         <PostSharer title={frontMatter.title} />
         <PostHeader frontMatter={frontMatter} />
-        <Breadcrumb list={breadcrum} />
+        <Breadcrumb list={buildBreadcrum(frontMatter.title)} />
         <PostToc toc={toc} />
         <section className="mb-auto" role="content">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 pb-10">
