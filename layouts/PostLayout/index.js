@@ -2,7 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { PostSEO } from '../../components/SEO';
-import { PostHeader, PostToc, PostSharer, PostFooter, PostComment } from '../../components/Post';
+import { PostHeader, PostToc, PostSharer, PostFooter, PostComment, Breadcrumb } from '../../components/Post';
+
+const breadcrum = [
+  {
+    href: '/',
+    text: 'Home'
+  },
+  {
+    href: '/',
+    text: 'Project'
+  },
+  {
+    href: '#',
+    text: 'Page'
+  } 
+];
 
 const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
   return (
@@ -20,6 +35,7 @@ const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
       <article>
         <PostSharer title={frontMatter.title} />
         <PostHeader frontMatter={frontMatter} />
+        <Breadcrumb list={breadcrum} />
         <PostToc toc={toc} />
         <section className="mb-auto" role="content">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 pb-10">
