@@ -17,7 +17,7 @@
 
 # seo
 public/sitemap.xml
-public/feed.xml
+feed.xml
 
 # misc
 .DS_Store

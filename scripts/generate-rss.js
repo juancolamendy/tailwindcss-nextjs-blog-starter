@@ -2,6 +2,8 @@ const fs = require('fs');
 const globby = require('globby');
 const matter = require('gray-matter');
 const prettier = require('prettier');
+const path = require('path');
+const { slug } = require('github-slugger');
 const siteMetadata = require('../data/siteMetadata');
 
 const { replace } = ''
@@ -48,6 +50,23 @@ const generateRss = (posts, page = 'feed.xml') => `
   </rss>
 `;
 
+function getAllTags(frontMatters) {
+  // init
+  let tagsSet = {};
+
+  // logic
+  frontMatters.forEach( fm => {
+    fm.tags.forEach( tag => {
+      const formattedTag = slug(tag);
+      if (!(formattedTag in tagsSet)) {
+        tagsSet[formattedTag] = true;
+      }
+    })
+  });
+  // return result
+  return Object.keys(tagsSet);
+}
+
 ;(async () => {
   console.log('--- generating rss');
   
@@ -83,6 +102,20 @@ const generateRss = (posts, page = 'feed.xml') => `
   
   // eslint-disable-next-line no-sync
   fs.writeFileSync('public/feed.xml', rss);
+
+  const root = process.cwd();
+  const allTags = getAllTags(frontMatters);
+  console.log(allTags);
+  allTags.forEach(tag => {
+    console.log('tag:', tag);
+    const filteredPosts = frontMatters.filter(
+      (post) => post.draft !== true && post.tags.map((t) => slug(t)).includes(tag)
+    );
+    const rss = generateRss(filteredPosts, `tags/${tag}/feed.xml`);
+    const rssPath = path.join(root, 'public', 'tags', tag);
+    fs.mkdirSync(rssPath, { recursive: true });
+    fs.writeFileSync(path.join(rssPath, 'feed.xml'), rss);
+  });
 
   console.log('--- rss generated');
 })()
