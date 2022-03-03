@@ -28,7 +28,6 @@ const PostSEO = ({title, description, authorSlug, ogImage, twImage, date, lastmo
     <Head>
       <meta property="article:published_time" content={formatToISO(date)} />
       <meta property="article:modified_time" content={formatToISO(lastmod || date)} />
-      <link rel="canonical" href={`${siteMetadata.site.url}${router.asPath}`} />
       <script 
           type='application/ld+json' 
           dangerouslySetInnerHTML={ { __html: 

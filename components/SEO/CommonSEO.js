@@ -33,6 +33,10 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
     <meta name="twitter:description" content={description || siteMetadata.meta.description} />
     <meta name="twitter:image" content={twImage} />
 
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href={`${siteMetadata.site.url}${router.asPath}`} />
+
     <script 
         type='application/ld+json' 
         dangerouslySetInnerHTML={ { __html: 
