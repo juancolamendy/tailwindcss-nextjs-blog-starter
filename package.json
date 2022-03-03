@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node ./scripts/generate-sitemap.js && node ./scripts/generate-rss.js && node ./scripts/generate-robot.js",
+    "build": "next build && node ./scripts/generate-rss.js && node ./scripts/generate-sitemap.js && node ./scripts/generate-robot.js",
     "start": "next start",
     "lint": "next lint"
   },
