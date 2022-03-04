@@ -75,7 +75,7 @@ function getAllTags(frontMatters) {
     'data/blogs/**/*.md',
   ]);
 
-  const frontMatters = posts.map(post => {
+  let frontMatters = posts.map(post => {
     if (post.search('.md') >= 1 && fs.existsSync(post)) {
       const source = fs.readFileSync(post, 'utf8');
       const fm = matter(source);
@@ -93,11 +93,18 @@ function getAllTags(frontMatters) {
         return
       }
       fm.data.slug = route;
+      fm.data.date = fm.data.date ? new Date(fm.data.date).toISOString() : null;
       return fm.data;      
     }
     return;
   });
 
+  frontMatters = frontMatters.sort((a, b) => {
+    if (a.date > b.date) return -1;
+    if (a.date < b.date) return 1;
+    return 0;
+  });
+  console.log('rss frontMatters:', frontMatters);
   const rss = generateRss(frontMatters);
   
   // eslint-disable-next-line no-sync
