@@ -57,8 +57,8 @@ const siteMetadata = {
   locale: 'en-US',
 
   newsletter: {
-    // mailchimp, buttondown, convertkit, klaviyo
-    provider: 'buttondown',
+    // mailchimp, buttondown, convertkit, klaviyo, mailerlite
+    provider: 'mailerlite',
     signupLabel: 'Sign up',
     subscribedMsg: 'You\'re subscribed!  🎉',
     thankyouMsg: 'Thank you!',
