@@ -49,12 +49,12 @@ const Breadcrumb = ({ list }) => {
         <ol className="inline-flex items-center space-x-1 md:space-x-3">
           { list.map( (x,i) => {
             if(i === 0) {
-              return (<BreadcrumbHome key={x.key} href={x.href} text={x.text} />)
+              return (<BreadcrumbHome key={x.text} href={x.href} text={x.text} />)
             }
             if(i === n-1) {
-              return (<BreadcrumbPage key={x.key} text={x.text} />);
+              return (<BreadcrumbPage key={x.text} text={x.text} />);
             }
-            return (<BreadcrumbItem key={x.key} href={x.href} text={x.text} />);
+            return (<BreadcrumbItem key={x.text} href={x.href} text={x.text} />);
           })}
         </ol>
       </nav>

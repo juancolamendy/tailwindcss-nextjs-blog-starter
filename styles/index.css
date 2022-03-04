@@ -14,12 +14,8 @@
   @apply w-full px-4 py-2 border-2 rounded-md focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500; 
 }
 
-figure:not([class]), p:not([class]) { 
-  @apply mt-4 mb-2;
-}
-
-ul:not([class]), ol:not([class]) { 
-  @apply m-2;
+figure:not([class]), p:not([class]), ul:not([class]), ol:not([class]) {
+  @apply mb-5;
 }
 
 li:not([class]) { 

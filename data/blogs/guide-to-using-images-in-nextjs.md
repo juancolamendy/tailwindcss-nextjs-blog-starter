@@ -3,8 +3,8 @@ title: Images in Next.js
 date: '2022-02-11'
 tags: ['next js', 'guide']
 draft: false
-summary: 'In this article we introduce adding images in the tailwind starter blog and the benefits and limitations of the next/image component.'
-headerImage: '/static/images/nextjs/guide-to-using-images-in-nextjs.jpg'
+summary: 'In this article we are going to talk about adding images in the starter blog.'
+headerImage: '/static/images/blogs/guide-to-using-images-in-nextjs.jpg'
 headerGradient: 'bg-gradient-to-r from-green-300 via-blue-500 to-purple-600' 
 headerTextColor: 'white'
 ogImage: '' 
@@ -14,7 +14,7 @@ author: 'default'
 
 ## Introduction
 
-The tailwind starter blog has out of the box support for [Next.js's built-in image component](https://nextjs.org/docs/api-reference/next/image) and automatically swaps out default image tags in markdown or mdx documents to use the Image component provided.
+The starter blog has out of the box support for [Next.js's built-in image component](https://nextjs.org/docs/api-reference/next/image) and automatically swaps out default image tags in markdown or mdx documents to use the Image component provided.
 
 ## Usage
 
@@ -26,7 +26,7 @@ import Image from 'next/image'
 function Home() {
   return (
     <>
-      <h1>My Homepage</h1>
+      <h1>Homepage</h1>
       <Image src="/me.png" alt="Picture of the author" width={500} height={500} />
       <p>Welcome to my homepage!</p>
     </>
@@ -38,25 +38,30 @@ export default Home
 
 For a markdown file, the default image tag can be used and the default `img` tag gets replaced by the `Image` component in the build process.
 
-Assuming we have a file called `ocean.jpg` in `data/img/ocean.jpg`, the following line of code would generate the optimized image.
+Assuming we have a file called `guide-to-using-images-in-nextjs.jpg`, the following line of code would generate the optimized image.
 
 ```
-![ocean](/static/images/ocean.jpg)
+![guide](/static/images/blogs/guide-to-using-images-in-nextjs.jpg)
 ```
 
 Alternatively, since we are using mdx, we can just use the image component directly! Note, that you would have to provide a fixed width and height. The `img` tag method parses the dimension automatically.
 
 ```js
-<Image alt="ocean" src="/static/images/nextjs/guide-to-using-images-in-nextjs.jpg" width={256} height={128} />
+<Image alt="guide" src="/static/images/blogs/guide-to-using-images-in-nextjs.jpg" width={256} height={128} />
 ```
 
 For example,
-<Image alt="ocean" src="/static/images/nextjs/guide-to-using-images-in-nextjs.jpg" width={300} height={128} />
+<Image alt="guide" src="/static/images/blogs/guide-to-using-images-in-nextjs.jpg" width={300} height={128} />
+<p>
+  Photo by [YUCAR
+  FotoGrafik](https://unsplash.com/@yucar?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
+  on
+  [Unsplash](https://unsplash.com/s/photos/sea?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
+</p>
 
 _Note_: If you try to save the image, it is in webp format, if your browser supports it!
 
-![ocean](/static/images/nextjs/guide-to-using-images-in-nextjs.jpg)
-
+![ocean](/static/images/blogs/guide-to-using-images-in-nextjs.jpg)
 <p>
   Photo by [YUCAR
   FotoGrafik](https://unsplash.com/@yucar?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
@@ -76,9 +81,8 @@ _Note_: If you try to save the image, it is in webp format, if your browser supp
 
 - Due to the reliance on `next/image`, unless you are using an external image CDN like Cloudinary or Imgix, it is practically required to use Vercel for hosting. This is because the component acts like a serverless function that calls a highly optimized image CDN.
 
-If you do not want to be tied to Vercel, you can remove `imgToJsx` in `remarkPlugins` in `lib/mdx.js`. This would avoid substituting the default `img` tag.
-
 Alternatively, one could wait for image optimization at build time to be supported. A different library, [next-optimized-images](https://github.com/cyrilwanner/next-optimized-images) does that, although it requires transforming the images through webpack which is not done here.
 
 - Images from external links are not passed through `next/image`
 - All images have to be stored in the `public` folder e.g `/static/images/ocean.jpeg`
+

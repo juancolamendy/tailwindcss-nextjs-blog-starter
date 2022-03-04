@@ -20,7 +20,7 @@ code:not([class]) { /* every section without class - but won't select Section C 
 }
 
 .code-highlight {
-  @apply float-left min-w-full border border-gray-500 bg-gray-100 p-4 my-3;
+  @apply float-left min-w-full border border-gray-500 bg-gray-100 p-4 mt-2 mb-5;
 }
 
 .code-line {

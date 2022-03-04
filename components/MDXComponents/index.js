@@ -5,19 +5,20 @@ import { Image } from '../Image';
 import { PostLink } from '../Link';
 import { TOCInline } from '../TOCInline';
 import { Pre } from '../Pre';
-import { PostH1 } from '../Post';
-import { PostH2 } from '../Post';
-import { PostH3 } from '../Post';
-import { PostH4 } from '../Post';
+import { H1 } from '../Post';
+import { H2 } from '../Post';
+import { H3 } from '../Post';
+import { H4 } from '../Post';
 
 export const MDXComponents = {
   Image,
   TOCInline,
+  H2,
   a: PostLink,
-  h1: PostH1,
-  h2: PostH2,
-  h3: PostH3,
-  h4: PostH4,
+  h1: H1,
+  h2: H2,
+  h3: H3,
+  h4: H4,
   pre: Pre,
   wrapper: ({ components, layout, ...rest }) => {
     const Layout = require(`../../layouts/${layout}`).default;
