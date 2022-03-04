@@ -9,11 +9,15 @@ import { H1 } from '../Post';
 import { H2 } from '../Post';
 import { H3 } from '../Post';
 import { H4 } from '../Post';
+import { ImageCredit } from '../Post';
 
 export const MDXComponents = {
   Image,
   TOCInline,
   H2,
+  H3,
+  H4,
+  ImageCredit,
   a: PostLink,
   h1: H1,
   h2: H2,

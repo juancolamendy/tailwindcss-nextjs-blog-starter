@@ -52,22 +52,22 @@ Alternatively, since we are using mdx, we can just use the image component direc
 
 For example,
 <Image alt="guide" src="/static/images/blogs/guide-to-using-images-in-nextjs.jpg" width={300} height={128} />
-<p>
-  Photo by [YUCAR
-  FotoGrafik](https://unsplash.com/@yucar?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-  on
-  [Unsplash](https://unsplash.com/s/photos/sea?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-</p>
+<ImageCredit
+  personRef="https://unsplash.com/@yucar?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+  person="YUCAR FotoGrafik"
+  imageRef="https://unsplash.com/s/photos/sea?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+  imageSource="Unsplash"
+/>
 
 _Note_: If you try to save the image, it is in webp format, if your browser supports it!
 
 ![ocean](/static/images/blogs/guide-to-using-images-in-nextjs.jpg)
-<p>
-  Photo by [YUCAR
-  FotoGrafik](https://unsplash.com/@yucar?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-  on
-  [Unsplash](https://unsplash.com/s/photos/sea?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-</p>
+<ImageCredit
+  personRef="https://unsplash.com/@yucar?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+  person="YUCAR FotoGrafik"
+  imageRef="https://unsplash.com/s/photos/sea?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
+  imageSource="Unsplash"
+/>
 
 ## Benefits
 
