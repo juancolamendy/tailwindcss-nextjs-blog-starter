@@ -7,7 +7,7 @@ import { Tag } from '../Tag';
 const PostFooter = ({tags, prev, next}) => {
   return(
   <section role="post-footer">
-    <div className="divide-gray-200 text-sm font-medium leading-5 xl:col-start-1 xl:row-start-2 xl:divide-y">
+    <div className="divide-gray-200 text-sm font-medium leading-5 md:divide-y">
       {tags && (
         <div className="py-4 xl:py-8">
           <h2 className="text-xs uppercase tracking-wide text-gray-500">
@@ -21,7 +21,7 @@ const PostFooter = ({tags, prev, next}) => {
         </div>
       )}
       {(next || prev) && (
-        <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
+        <div className="flex flex-col space-y-4 py-4 md:flex-row md:justify-between">
           {prev && (
             <div>
               <h2 className="text-xs uppercase tracking-wide text-gray-500">
