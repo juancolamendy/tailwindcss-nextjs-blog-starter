@@ -115,3 +115,31 @@ export const buildPostSchema = (url, title, description, domain, authorSlug, ogI
   ]}
   `);
 };
+
+export const buildBreadcrum = (siteUrl, articlePath, breadcrum) => {
+  return (`
+  {
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"BreadcrumbList",
+      "@id":"${siteUrl}${articlePath}/#/schema/breadcrumb",
+      "itemListElement":
+      [
+        ${ breadcrum.map( (x,i) => {
+          return `{
+          "@type":"ListItem",
+          "position": ${i},
+          "item": {
+            "@type":"WebPage",
+            "@id":"${siteUrl}${x.href}",
+            "url":"${siteUrl}${x.href}", 
+            "name":"${x.text}"
+          }
+          },`;
+        }).join(' ')}
+      ]
+    }
+  ]}
+  `);
+};

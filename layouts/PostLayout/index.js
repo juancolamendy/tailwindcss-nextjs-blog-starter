@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { useRouter } from 'next/router';
+
 import { PostSEO } from '../../components/SEO';
 import { PostHeader, PostToc, PostSharer, PostFooter, PostComment, Breadcrumb } from '../../components/Post';
 
-const buildBreadcrum = (title) =>  ([
+const buildBreadcrum = (title, href) =>  ([
   {
     href: '/',
     text: 'Home'
@@ -14,12 +16,16 @@ const buildBreadcrum = (title) =>  ([
     text: 'Posts'
   },
   {
-    href: '#',
+    href: href,
     text: title
   } 
 ]);
 
 const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
+  // hooks
+  const router = useRouter();
+
+  // render out
   return (
   <>
     <PostSEO
@@ -30,12 +36,13 @@ const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
       twImage={frontMatter.twImage}
       date={frontMatter.date}
       lastmod={frontMatter.lastmod}
+      breadcrum={buildBreadcrum(frontMatter.title, router.asPath)}
     />
     <main role="document">
       <article>
         <PostSharer title={frontMatter.title} />
         <PostHeader frontMatter={frontMatter} />
-        <Breadcrumb list={buildBreadcrum(frontMatter.title)} />
+        <Breadcrumb list={buildBreadcrum(frontMatter.title, router.asPath)} />
         <PostToc toc={toc} />
         <section className="mb-auto" role="content">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 pb-10">

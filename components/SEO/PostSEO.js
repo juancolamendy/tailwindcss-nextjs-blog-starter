@@ -9,9 +9,9 @@ import CommonSEO from './CommonSEO';
 import { formatToISO } from '../../lib/utils/dateutils';
 
 import siteMetadata from '../../data/siteMetadata';
-import { buildPostSchema } from './seoschema'; 
+import { buildPostSchema, buildBreadcrum } from './seoschema'; 
 
-const PostSEO = ({title, description, authorSlug, ogImage, twImage, date, lastmod}) => {
+const PostSEO = ({title, description, authorSlug, ogImage, twImage, date, lastmod, breadcrum}) => {
   // hooks
   const router = useRouter();
 
@@ -34,7 +34,14 @@ const PostSEO = ({title, description, authorSlug, ogImage, twImage, date, lastmo
           `
           ${buildPostSchema(`${siteMetadata.site.url}${router.asPath}`, title, description, siteMetadata.site.url, authorSlug, ogImage, date)}
           `}} 
-      />      
+      /> 
+      <script 
+          type='application/ld+json' 
+          dangerouslySetInnerHTML={ { __html: 
+          `
+          ${buildBreadcrum(siteMetadata.site.url, router.asPath, breadcrum)}
+          `}} 
+      /> 
     </Head>
   </>
   )
@@ -49,6 +56,7 @@ PostSEO.propTypes = {
   twImage: PropTypes.string,
   date: PropTypes.string,
   lastmod: PropTypes.string,
+  breadcrum: PropTypes.array,
 };
 
 export default PostSEO;
