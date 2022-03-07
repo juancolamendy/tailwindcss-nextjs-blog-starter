@@ -46,6 +46,10 @@ const securityHeaders = [
     key: 'Permissions-Policy',
     value: 'camera=(), microphone=(), geolocation=()',
   },
+  {
+    key: 'Access-Control-Allow-Origin',
+    value: '*',
+  },
 ];
 
 module.exports = {

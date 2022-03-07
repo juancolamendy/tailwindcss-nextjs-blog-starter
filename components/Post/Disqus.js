@@ -17,9 +17,10 @@ const Disqus = ({ frontMatter }) => {
       this.page.url = window.location.href;
       this.page.identifier = frontMatter.slug;
     }
+    // console.log('disqus shortName:', siteMetadata.comment.disqus.shortName);
     if (window.DISQUS === undefined) {
       const script = document.createElement('script');
-      script.src = 'https://' + siteMetadata.disqus.shortName + '.disqus.com/embed.js';
+      script.src = 'https://' + siteMetadata.comment.disqus.shortName + '.disqus.com/embed.js';
       script.setAttribute('data-timestamp', + new Date());
       script.setAttribute('crossorigin', 'anonymous');
       script.async = true;

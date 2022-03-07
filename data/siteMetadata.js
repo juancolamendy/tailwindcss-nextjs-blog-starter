@@ -23,7 +23,7 @@ const siteMetadata = {
 
   comment: {
     // supported providers: giscus, utterances, disqus
-    provider: '',
+    provider: 'disqus',
     disqus: {
       shortName: process.env.NEXT_PUBLIC_DISQUS_SHORTNAME,
     },
