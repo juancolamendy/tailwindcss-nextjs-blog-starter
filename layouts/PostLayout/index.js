@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { useRouter } from 'next/router';
 
+import siteMetadata from '../../data/siteMetadata';
 import { PostSEO } from '../../components/SEO';
 import { PostHeader, PostToc, PostSharer, PostFooter, PostComment, Breadcrumb } from '../../components/Post';
 
@@ -49,7 +50,7 @@ const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
             <div className="prose max-w-none" role="post-content">
               {children}
             </div>
-            <PostComment frontMatter={frontMatter} />
+            { siteMetadata.comment && siteMetadata.comment.provider && <PostComment frontMatter={frontMatter} /> }
             <PostFooter tags={frontMatter.tags} prev={prev} next={next} />
           </div>
         </section>

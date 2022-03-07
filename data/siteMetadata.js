@@ -23,7 +23,10 @@ const siteMetadata = {
 
   comment: {
     // supported providers: giscus, utterances, disqus
-    provider: 'utterances', 
+    provider: '',
+    disqus: {
+      shortName: process.env.NEXT_PUBLIC_DISQUS_SHORTNAME,
+    },
     giscusConfig: {
       // Visit the link below, and follow the steps in the 'configuration' section
       // https://giscus.app/

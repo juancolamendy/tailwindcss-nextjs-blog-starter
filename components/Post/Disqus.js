@@ -19,7 +19,7 @@ const Disqus = ({ frontMatter }) => {
     }
     if (window.DISQUS === undefined) {
       const script = document.createElement('script');
-      script.src = 'https://' + process.env.NEXT_PUBLIC_DISQUS_SHORTNAME + '.disqus.com/embed.js';
+      script.src = 'https://' + siteMetadata.disqus.shortName + '.disqus.com/embed.js';
       script.setAttribute('data-timestamp', + new Date());
       script.setAttribute('crossorigin', 'anonymous');
       script.async = true;
