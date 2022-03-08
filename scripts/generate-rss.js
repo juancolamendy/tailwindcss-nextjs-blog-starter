@@ -24,9 +24,9 @@ const escape = (es) => replace.call(es, ca, pe);
 
 const generateRssItem = (post) => `
   <item>
-    <guid>${siteMetadata.site.url}/blogs/${post.slug}</guid>
+    <guid>${siteMetadata.site.url}${siteMetadata.site.context}/${post.slug}</guid>
     <title>${escape(post.title)}</title>
-    <link>${siteMetadata.site.url}/blogs/${post.slug}</link>
+    <link>${siteMetadata.site.url}${siteMetadata.site.context}/${post.slug}</link>
     ${post.summary && `<description>${escape(post.summary)}</description>`}
     <pubDate>${new Date(post.date).toUTCString()}</pubDate>
     <author>${siteMetadata.author.email} (${siteMetadata.author.name})</author>
@@ -38,13 +38,13 @@ const generateRss = (posts, page = 'feed.xml') => `
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>${escape(siteMetadata.meta.title)}</title>
-      <link>${siteMetadata.site.url}</link>
+      <link>${siteMetadata.site.url}${siteMetadata.site.context}</link>
       <description>${escape(siteMetadata.meta.description)}</description>
       <language>${siteMetadata.locale}</language>
       <managingEditor>${siteMetadata.author.email} (${siteMetadata.author.name})</managingEditor>
       <webMaster>${siteMetadata.author.email} (${siteMetadata.author.name})</webMaster>
       <lastBuildDate>${new Date(posts[0].date).toUTCString()}</lastBuildDate>
-      <atom:link href="${siteMetadata.site.url}/${page}" rel="self" type="application/rss+xml"/>
+      <atom:link href="${siteMetadata.site.url}${siteMetadata.site.context}/${page}" rel="self" type="application/rss+xml"/>
       ${posts.map(generateRssItem).join('')}
     </channel>
   </rss>
