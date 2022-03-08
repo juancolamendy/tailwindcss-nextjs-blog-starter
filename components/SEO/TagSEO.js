@@ -7,7 +7,6 @@ import { useRouter } from 'next/router';
 import CommonSEO from './CommonSEO';
 
 import siteMetadata from '../../data/siteMetadata';
-import { buildPageSchema } from './seoschema';
 
 const TagSEO = ({ title, description, ogImage, twImage }) => {
   // hooks
@@ -20,15 +19,15 @@ const TagSEO = ({ title, description, ogImage, twImage }) => {
       title={title}
       description={description}
       ogType="website"
-      ogImage={ogImage || `${siteMetadata.site.url}${siteMetadata.site.banner}`}
-      twImage={twImage || `${siteMetadata.site.url}${siteMetadata.site.banner}`}
+      ogImage={ogImage || `${siteMetadata.site.url}${siteMetadata.site.context}${siteMetadata.site.banner}`}
+      twImage={twImage || `${siteMetadata.site.url}${siteMetadata.site.context}${siteMetadata.site.banner}`}
     />
     <Head>
       <link
         rel="alternate"
         type="application/rss+xml"
         title={`${description} - RSS feed`}
-        href={`${siteMetadata.site.url}${router.asPath}/feed.xml`}
+        href={`${siteMetadata.site.url}${siteMetadata.site.context}${router.asPath}/feed.xml`}
       />
     </Head>
   </>

@@ -22,8 +22,8 @@ const PostSEO = ({title, description, authorSlug, ogImage, twImage, date, lastmo
       title={title}
       description={description}
       ogType="article"
-      ogImage={ogImage || `${siteMetadata.site.url}${siteMetadata.site.banner}`}
-      twImage={twImage || `${siteMetadata.site.url}${siteMetadata.site.banner}`}
+      ogImage={ogImage || `${siteMetadata.site.url}${siteMetadata.site.context}${siteMetadata.site.banner}`}
+      twImage={twImage || `${siteMetadata.site.url}${siteMetadata.site.context}${siteMetadata.site.banner}`}
     />
     <Head>
       <meta property="article:published_time" content={formatToISO(date)} />
@@ -32,14 +32,14 @@ const PostSEO = ({title, description, authorSlug, ogImage, twImage, date, lastmo
           type='application/ld+json' 
           dangerouslySetInnerHTML={ { __html: 
           `
-          ${buildPostSchema(`${siteMetadata.site.url}${router.asPath}`, title, description, siteMetadata.site.url, authorSlug, ogImage, date)}
+          ${buildPostSchema(`${siteMetadata.site.url}${siteMetadata.site.context}${router.asPath}`, title, description, siteMetadata.site.url, authorSlug, ogImage, date)}
           `}} 
       /> 
       <script 
           type='application/ld+json' 
           dangerouslySetInnerHTML={ { __html: 
           `
-          ${buildBreadcrum(siteMetadata.site.url, router.asPath, breadcrum)}
+          ${buildBreadcrum(`${siteMetadata.site.url}${siteMetadata.site.context}`, router.asPath, breadcrum)}
           `}} 
       /> 
     </Head>

@@ -18,7 +18,7 @@ const Pagination = ({ totalPages, currentPage }) => {
       {prevPage && (
         <Link 
           className="text-primary-500 link-text"
-          href={currentPage - 1 === 1 ? `/blog/` : `/blog/page/${currentPage - 1}`}
+          href={currentPage - 1 === 1 ? `/page/` : `/page/${currentPage - 1}`}
         >
           <button rel="previous">Previous</button>
         </Link>
@@ -34,7 +34,7 @@ const Pagination = ({ totalPages, currentPage }) => {
       {nextPage && (
         <Link 
           className="text-primary-500 link-text"
-          href={`/blog/page/${currentPage + 1}`}
+          href={`/page/${currentPage + 1}`}
         >
           <button rel="next">Next</button>
         </Link>

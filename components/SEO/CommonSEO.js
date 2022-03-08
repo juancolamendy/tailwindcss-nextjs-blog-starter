@@ -17,7 +17,8 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
     <title>{title || siteMetadata.meta.title}</title>
     <meta name="robots" content="follow, index" />
     <meta name="description" content={description || siteMetadata.meta.description} />
-    <meta property="og:url" content={`${siteMetadata.site.url}${router.asPath}`} />
+
+    <meta property="og:url" content={`${siteMetadata.site.url}${siteMetadata.site.context}${router.asPath}`} />
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={siteMetadata.meta.title} />
     <meta property="og:description" content={description || siteMetadata.meta.description} />
@@ -35,13 +36,13 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
 
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <link rel="canonical" href={`${siteMetadata.site.url}${router.asPath}`} />
+    <link rel="canonical" href={`${siteMetadata.site.url}${siteMetadata.site.context}${router.asPath}`} />
 
     <script 
         type='application/ld+json' 
         dangerouslySetInnerHTML={ { __html: 
         `
-        ${buildCommonSchema(siteMetadata.site.url, siteMetadata.site.name, siteMetadata.site.logo, siteMetadata.site.twitter, siteMetadata.author.name, siteMetadata.author.slug, siteMetadata.author.description, siteMetadata.author.image, siteMetadata.author.linkedin, siteMetadata.author.twitter)}
+        ${buildCommonSchema(`${siteMetadata.site.url}${siteMetadata.site.context}`, siteMetadata.site.name, siteMetadata.site.logo, siteMetadata.site.twitter, siteMetadata.author.name, siteMetadata.author.slug, siteMetadata.author.description, siteMetadata.author.image, siteMetadata.author.linkedin, siteMetadata.author.twitter)}
         `}} 
     />
   </Head>

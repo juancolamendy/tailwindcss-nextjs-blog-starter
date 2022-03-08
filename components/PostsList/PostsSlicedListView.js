@@ -33,7 +33,7 @@ const PostsSlicedListView = ({ posts }) => {
   {posts.length > constants.MaxDisplay && (
   <div className="flex justify-end text-base font-medium leading-6">
     <Link
-      href="/blog"
+      href="/page"
       className="text-primary-500 link-text"
       aria-label="all posts"
     >

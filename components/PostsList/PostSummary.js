@@ -13,7 +13,7 @@ const PostSummary = ({slug, date, title, summary, tags, authorName, authorSlug, 
     <header className="flex flex-col space-y-1 sm:space-y-2">
       <h2 className="blog-h2">
         <Link
-          href={`/blogs/${slug}`}
+          href={`/${slug}`}
           className="text-primary-700 link-text"
         >
           {title}
@@ -38,7 +38,7 @@ const PostSummary = ({slug, date, title, summary, tags, authorName, authorSlug, 
     </div>
     <footer className="text-xs font-medium leading-6 mt-3">
       <Link
-        href={`/blogs/${slug}`}
+        href={`/${slug}`}
         className="text-gray-500 link-text"
         aria-label={`Read "${title}"`}
       >

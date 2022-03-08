@@ -1,10 +1,10 @@
-import { PageSEO } from '../components/SEO';
+import { PageSEO } from '../../components/SEO';
 
-import { PostsPagedListView } from '../components/PostsList';
-import { Breadcrumb } from '../components/Post';
+import { PostsPagedListView } from '../../components/PostsList';
+import { Breadcrumb } from '../../components/Post';
 
-import { getAllFilesFrontMatter } from '../lib/mdx';
-import siteMetadata from '../data/siteMetadata';
+import { getAllFilesFrontMatter } from '../../lib/mdx';
+import siteMetadata from '../../data/siteMetadata';
 
 const breadcrum = [
   {
@@ -12,7 +12,7 @@ const breadcrum = [
     text: 'Home'
   },
   {
-    href: '/blogs',
+    href: '/page',
     text: 'Posts'
   }
 ];

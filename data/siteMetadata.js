@@ -80,6 +80,7 @@ const siteMetadata = {
     name: 'Blog Starter',
     logo: 'http://localhost:3000/static/images/logo.svg',
     url:  'http://localhost:3000',
+    context: '',
     // socials
     email: 'hello@yoursite.com',
     facebook: 'https://facebook.com/blogstarter',

@@ -1,11 +1,11 @@
-import { PageSEO } from '../../../components/SEO';
+import { PageSEO } from '../../components/SEO';
 
-import { PostsPagedListView } from '../../../components/PostsList';
-import { Breadcrumb } from '../../../components/Post';
+import { PostsPagedListView } from '../../components/PostsList';
+import { Breadcrumb } from '../../components/Post';
 
-import constant from '../../../lib/utils/constants';
-import { getAllFilesFrontMatter, getFiles } from '../../../lib/mdx';
-import siteMetadata from '../../../data/siteMetadata';
+import constant from '../../lib/utils/constants';
+import { getAllFilesFrontMatter, getFiles } from '../../lib/mdx';
+import siteMetadata from '../../data/siteMetadata';
 
 const buildBreadcrum = (currentPage) =>  ([
   {
@@ -13,12 +13,12 @@ const buildBreadcrum = (currentPage) =>  ([
     text: 'Home'
   },
   {
-    href: '/blogs',
+    href: '/page',
     text: 'Posts'
   },
   {
-    href: '#',
-    text: `Page - ${currentPage}`
+    href: `/page/${currentPage}`,
+    text: `Page: ${currentPage}`
   } 
 ]);
 

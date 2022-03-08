@@ -20,15 +20,15 @@ const PageSEO = ({ title, description, ogImage, twImage }) => {
       title={title}
       description={description}
       ogType="website"
-      ogImage={ogImage || `${siteMetadata.site.url}${siteMetadata.site.banner}`}
-      twImage={twImage || `${siteMetadata.site.url}${siteMetadata.site.banner}`}
+      ogImage={ogImage || `${siteMetadata.site.url}${siteMetadata.site.context}${siteMetadata.site.banner}`}
+      twImage={twImage || `${siteMetadata.site.url}${siteMetadata.site.context}${siteMetadata.site.banner}`}
     />
     <Head>
       <script 
           type='application/ld+json' 
           dangerouslySetInnerHTML={ { __html: 
           `
-          ${buildPageSchema(`${siteMetadata.site.url}${router.asPath}`, title, description, siteMetadata.site.url)}
+          ${buildPageSchema(`${siteMetadata.site.url}${siteMetadata.site.context}${router.asPath}`, title, description, siteMetadata.site.url)}
           `}} 
       />      
     </Head>

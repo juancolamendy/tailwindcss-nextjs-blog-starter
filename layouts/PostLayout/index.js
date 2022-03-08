@@ -13,8 +13,8 @@ const buildBreadcrum = (title, href) =>  ([
     text: 'Home'
   },
   {
-    href: '/blogs',
-    text: 'Posts'
+    href: `${siteMetadata.site.context}`,
+    text: 'Blogs'
   },
   {
     href: href,
