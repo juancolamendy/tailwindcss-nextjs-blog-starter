@@ -116,14 +116,18 @@ export const buildPostSchema = (url, title, description, domain, authorSlug, ogI
   `);
 };
 
-export const buildBreadcrum = (siteUrl, articlePath, breadcrum) => {
+export const buildBreadcrum = (defaultPath, breadcrum) => {
+  let pagePath = defaultPath;
+  if(breadcrum.length>0) {
+    pagePath = breadcrum[breadcrum.length-1].href;
+  }
   return (`
   {
   "@context":"https://schema.org",
   "@graph":[
     {
       "@type":"BreadcrumbList",
-      "@id":"${siteUrl}${articlePath}/#/schema/breadcrumb",
+      "@id":"${pagePath}/#/schema/breadcrumb",
       "itemListElement":
       [
         ${ breadcrum.map( (x,i) => {
@@ -132,8 +136,8 @@ export const buildBreadcrum = (siteUrl, articlePath, breadcrum) => {
           "position": ${i},
           "item": {
             "@type":"WebPage",
-            "@id":"${siteUrl}${x.href}",
-            "url":"${siteUrl}${x.href}", 
+            "@id":"${x.href}",
+            "url":"${x.href}", 
             "name":"${x.text}"
           }
           },`;

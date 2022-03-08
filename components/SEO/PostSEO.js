@@ -39,7 +39,7 @@ const PostSEO = ({title, description, authorSlug, ogImage, twImage, date, lastmo
           type='application/ld+json' 
           dangerouslySetInnerHTML={ { __html: 
           `
-          ${buildBreadcrum(`${siteMetadata.site.url}${siteMetadata.site.context}`, router.asPath, breadcrum)}
+          ${buildBreadcrum(`${siteMetadata.site.url}${siteMetadata.site.context}${router.asPath}`, breadcrum)}
           `}} 
       /> 
     </Head>

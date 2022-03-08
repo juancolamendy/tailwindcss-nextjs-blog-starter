@@ -9,15 +9,15 @@ import { PostHeader, PostToc, PostSharer, PostFooter, PostComment, Breadcrumb } 
 
 const buildBreadcrum = (title, href) =>  ([
   {
-    href: '/',
+    href: `${siteMetadata.site.url}`,
     text: 'Home'
   },
   {
-    href: `${siteMetadata.site.context}`,
+    href: `${siteMetadata.site.url}${siteMetadata.site.context}`,
     text: 'Blogs'
   },
   {
-    href: href,
+    href: `${siteMetadata.site.url}${siteMetadata.site.context}${href}`,
     text: title
   } 
 ]);
