@@ -21,8 +21,7 @@ const siteMetadata = require('../data/siteMetadata');
   const sitemap = `
         <?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-            ${pages
-              .map((page) => {
+            ${pages.map((page) => {
                 // Exclude drafts from the sitemap
                 if (page.search('.md') >= 1 && fs.existsSync(page)) {
                   const source = fs.readFileSync(page, 'utf8')
@@ -33,7 +32,7 @@ const siteMetadata = require('../data/siteMetadata');
                 }
                 const path = page
                   .replace('pages/', '/')
-                  .replace('data/blogs', '/blogs')
+                  .replace('data/blogs', '')
                   .replace('public/', '/')
                   .replace('.js', '')
                   .replace('.tsx', '')
@@ -42,16 +41,19 @@ const siteMetadata = require('../data/siteMetadata');
                   .replace('/feed.xml', '')
                 const route = path === '/index' ? '' : path
 
-                if (page.search('pages/404.') > -1 || page.search(`pages/blogs/[...slug].`) > -1) {
+                console.log('page:', page);
+                console.log('path:', path);
+                if (page.search('pages/404.') > -1 || page.search(`slug].js$`) > -1) {
                   return
                 }
                 return `
                         <url>
-                            <loc>${siteMetadata.site.url}${route}</loc>
+                            <loc>${siteMetadata.site.url}${siteMetadata.site.context}${route}</loc>
                         </url>
                     `
               })
-              .join('')}
+              .join('')
+            }
         </urlset>
     `
 
