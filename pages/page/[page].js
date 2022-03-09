@@ -5,17 +5,12 @@ import { Breadcrumb } from '../../components/Post';
 
 import constant from '../../lib/utils/constants';
 import { getAllFilesFrontMatter, getFiles } from '../../lib/mdx';
+
 import siteMetadata from '../../data/siteMetadata';
+import breadcrumBase from '../../data/breadcrums';
 
 const buildBreadcrum = (currentPage) =>  ([
-  {
-    href: '/',
-    text: 'Home'
-  },
-  {
-    href: '/page',
-    text: 'Posts'
-  },
+  ... breadcrumBase,
   {
     href: `/page/${currentPage}`,
     text: `Page: ${currentPage}`

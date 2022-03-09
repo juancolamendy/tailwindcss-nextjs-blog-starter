@@ -2,19 +2,12 @@ import { PageSEO } from '../components/SEO';
 import { Tag } from '../components/Tag';
 import { Breadcrumb } from '../components/Post';
 
-import siteMetadata from '../data/siteMetadata';
 import { getAllTags } from '../lib/tags'; 
 
-const breadcrum = [
-  {
-    href: '/',
-    text: 'Home'
-  },
-  {
-    href: '/tags',
-    text: 'Tags'
-  }
-];
+import siteMetadata from '../data/siteMetadata';
+import { tagsBreadcrum } from '../data/breadcrums';
+
+const breadcrum = [...tagsBreadcrum];
 
 export async function getStaticProps() {
   const tags = await getAllTags();

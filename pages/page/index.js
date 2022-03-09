@@ -4,18 +4,11 @@ import { PostsPagedListView } from '../../components/PostsList';
 import { Breadcrumb } from '../../components/Post';
 
 import { getAllFilesFrontMatter } from '../../lib/mdx';
-import siteMetadata from '../../data/siteMetadata';
 
-const breadcrum = [
-  {
-    href: '/',
-    text: 'Home'
-  },
-  {
-    href: '/page',
-    text: 'Posts'
-  }
-];
+import siteMetadata from '../../data/siteMetadata';
+import breadcrumBase from '../../data/breadcrums';
+
+const breadcrum = [...breadcrumBase];
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blogs');
