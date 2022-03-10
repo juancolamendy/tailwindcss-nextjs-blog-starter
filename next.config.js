@@ -1,6 +1,3 @@
-const getBasePath = require('./lib/utils/basepath');
-
-// You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
@@ -53,6 +50,20 @@ const securityHeaders = [
     value: '*',
   },
 ];
+
+function getBasePath() {
+  var basePath = '';
+
+  if (process.env.NEXT_PUBLIC_BASE_PATH){
+      if (process.env.NEXT_PUBLIC_BASE_PATH.startsWith("/") ){
+          basePath = process.env.NEXT_PUBLIC_BASE_PATH;
+      } else {
+          basePath = "/" + process.env.NEXT_PUBLIC_BASE_PATH;
+      }
+  }
+
+  return basePath;
+}
 
 const basePath = getBasePath();
 console.log("getBasePath() : basePath = " + basePath);
