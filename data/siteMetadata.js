@@ -1,6 +1,6 @@
 const getBasePath = require('../lib/utils/basepath');
 
-const baseUrl = 'http://locahost:3000'
+const baseUrl = 'http://locahost:3000';
 
 const siteMetadata = {
   analytics: {
