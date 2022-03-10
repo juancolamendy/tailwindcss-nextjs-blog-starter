@@ -1,3 +1,5 @@
+const getBasePath = require('./lib/utils/basepath');
+
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
   default-src 'self';
@@ -52,7 +54,11 @@ const securityHeaders = [
   },
 ];
 
+const basePath = getBasePath();
+console.log("getBasePath() : basePath = " + basePath);
+
 module.exports = {
+  basePath: basePath,
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   eslint: {

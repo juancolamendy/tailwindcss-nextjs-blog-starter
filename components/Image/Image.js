@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 import Image from 'next/image';
 
-const CustomImage = ({ alt, title, ...rest }) => <Image alt={alt} title={title} {...rest} />;
+import siteMetadata from '../../data/siteMetadata';
+
+console.log('siteMetadata.site.context', siteMetadata.site.context);
+const CustomImage = ({ alt, title, src, ...rest }) => <Image src={`${siteMetadata.site.context}${src}`} alt={alt} title={title} {...rest} />;
 
 CustomImage.propTypes = {
   alt: PropTypes.string,

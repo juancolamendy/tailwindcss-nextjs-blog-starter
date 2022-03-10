@@ -12,7 +12,7 @@ const PostSharer = ({title}) => {
   return (
   <div className="hidden fixed top-40 left-2 lg:left-40 w-20 z-10 bg-white rounded-md border-2 border-gray-100 py-4 px-2 flex-col justify-center items-center space-y-4 md:flex" role="sharer">
     <a 
-      href={`https://twitter.com/share?text=${encodeURIComponent(title)}&url=${encodeURIComponent(siteMetadata.site.url+router.asPath)}&via=${siteMetadata.site.name}`} 
+      href={`https://twitter.com/share?text=${encodeURIComponent(title)}&url=${encodeURIComponent(siteMetadata.site.url+siteMetadata.site.context+router.asPath)}&via=${siteMetadata.site.name}`} 
       title="Share on Twitter" 
       rel="noreferrer" 
       target="_blank">
@@ -24,7 +24,7 @@ const PostSharer = ({title}) => {
       </svg>
     </a>
     <a 
-      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(siteMetadata.site.url+router.asPath)}`} 
+      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(siteMetadata.site.url+siteMetadata.site.context+router.asPath)}`} 
       title="Share on Facebook" 
       rel="noreferrer" 
       target="_blank">
@@ -36,7 +36,7 @@ const PostSharer = ({title}) => {
       </svg>
     </a>
     <a 
-      href={`https://api.whatsapp.com/send?text=${encodeURIComponent(title + ' by ' + siteMetadata.site.name + ' - ' + siteMetadata.site.url+router.asPath)}`} 
+      href={`https://api.whatsapp.com/send?text=${encodeURIComponent(title + ' by ' + siteMetadata.site.name + ' - ' + siteMetadata.site.url+siteMetadata.site.context+router.asPath)}`} 
       title="Share on WhatsApp" 
       rel="noreferrer" 
       target="_blank">
@@ -48,7 +48,7 @@ const PostSharer = ({title}) => {
       </svg>
     </a>
     <a 
-      href={`https://t.me/share/url?url=${encodeURIComponent(siteMetadata.site.url+router.asPath)}&text=${encodeURIComponent(title + ' by '+ siteMetadata.site.name)}`} 
+      href={`https://t.me/share/url?url=${encodeURIComponent(siteMetadata.site.url+siteMetadata.site.context+router.asPath)}&text=${encodeURIComponent(title + ' by '+ siteMetadata.site.name)}`} 
       title="Share on Telegram" 
       rel="noreferrer" 
       target="_blank">
@@ -60,7 +60,7 @@ const PostSharer = ({title}) => {
       </svg>
     </a>
     <a 
-      href={`mailto:?subject=${encodeURIComponent(title + ' by ' + siteMetadata.site.name + ' ')}&body=${encodeURIComponent(title + ' by ' + siteMetadata.site.name + ' ' + siteMetadata.site.url+router.asPath)}`}
+      href={`mailto:?subject=${encodeURIComponent(title + ' by ' + siteMetadata.site.name + ' ')}&body=${encodeURIComponent(title + ' by ' + siteMetadata.site.name + ' ' + siteMetadata.site.url+siteMetadata.site.context+router.asPath)}`}
       title="Share on Email" 
       rel="noreferrer" 
       target="_blank">

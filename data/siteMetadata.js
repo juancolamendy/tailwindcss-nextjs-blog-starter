@@ -1,3 +1,7 @@
+const getBasePath = require('../lib/utils/basepath');
+
+const baseUrl = 'http://locahost:3000'
+
 const siteMetadata = {
   analytics: {
     plausibleDataDomain: '', 
@@ -78,9 +82,9 @@ const siteMetadata = {
 
   site: {
     name: 'Blog Starter',
-    logo: 'http://localhost:3000/static/images/logo.svg',
-    url:  'http://localhost:3000',
-    context: '',
+    logo: `${baseUrl}/static/images/logo.svg`,
+    url:  baseUrl,
+    context: getBasePath(),
     // socials
     email: 'hello@yoursite.com',
     facebook: 'https://facebook.com/blogstarter',
