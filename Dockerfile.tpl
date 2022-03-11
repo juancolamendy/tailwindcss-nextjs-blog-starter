@@ -7,12 +7,14 @@ FROM node:lts as builder
 WORKDIR /app
 COPY . .
 COPY --from=dependencies /app/node_modules ./node_modules
+ENV NEXT_PUBLIC_BASE_PATH {{basepath}}
 RUN npm run build
 
 FROM node:lts as runner
 WORKDIR /app
 ENV NODE_ENV production
-# If you are using a custom next.config.js file, uncomment this line.
+ENV NEXT_PUBLIC_BASE_PATH {{basepath}}
+
 COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
