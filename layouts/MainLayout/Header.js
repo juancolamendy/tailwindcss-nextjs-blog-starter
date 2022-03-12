@@ -13,7 +13,7 @@ const Header = () => {
     <div className="flex items-center justify-between mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
       <Link href="/" aria-label={siteMetadata.meta.title}>
         <div className="flex items-center justify-between">
-          <div className="w-8 h-4 mr-3">
+          <div className="w-8 h-8 mt-0 sm:mt-2 mr-3 sm:mr-5">
             <Logo />
           </div>
           <div className="hidden h-6 text-primary-700 text-3xl font-semibold sm:block link-text">
