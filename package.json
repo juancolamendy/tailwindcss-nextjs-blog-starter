@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && node ./scripts/generate-rss.js && node ./scripts/generate-sitemap.js && node ./scripts/generate-robot.js",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint"
   },
