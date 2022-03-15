@@ -17,7 +17,7 @@ const Index = ({ posts }) => {
     <>
       <PageSEO title={siteMetadata.meta.title} description={siteMetadata.meta.description} />
       <section>
-        <div className="flex flex-col justify-center items-center space-y-4 py-10 bg-primary-100 sm:space-y-6 sm:py-14 md:space-y-8 md:py-16">
+        <div className="flex flex-col justify-center items-center space-y-4 py-10 px-4 bg-primary-100 sm:space-y-6 sm:py-14 md:space-y-8 md:py-16">
           <h1 className="blog-h1">
             Get Exclusive Tips
           </h1>
