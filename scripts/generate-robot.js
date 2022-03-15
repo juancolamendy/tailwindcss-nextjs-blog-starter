@@ -5,7 +5,7 @@ const siteMetadata = require('../data/siteMetadata');
   console.log('--- generating robot');
   
   // generate robot
-  const robot = `Sitemap: ${siteMetadata.site.url}/sitemap.xml
+  const robot = `Sitemap: ${siteMetadata.site.url}${siteMetadata.site.context}/sitemap.xml
 User-agent: *
 Allow: /*
   `;
