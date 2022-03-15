@@ -18,12 +18,10 @@ const Index = ({ posts }) => {
       <PageSEO title={siteMetadata.meta.title} description={siteMetadata.meta.description} />
       <section>
         <div className="flex flex-col justify-center items-center space-y-4 py-10 px-4 bg-primary-100 sm:space-y-6 sm:py-14 md:space-y-8 md:py-16">
-          <h1 className="blog-h1">
-            Get Exclusive Tips
+          <h1 className="blog-h1 text-center">
+            {siteMetadata.meta.blogsHeader}
           </h1>
-          <p className="text-xl leading-7 text-gray-600">
-            {siteMetadata.meta.blogsDescription}
-          </p>
+          <p className="text-xl leading-7 text-gray-600 text-center" dangerouslySetInnerHTML={{ __html: siteMetadata.meta.blogsDescription }}></p>
           { siteMetadata.newsletter && siteMetadata.newsletter.provider && 
           (<div className="flex justify-center items-center w-full md:w-3/4 lg:w-5/12 py-4 sm:py-6 px-2">
             <NewsletterForm /> 
