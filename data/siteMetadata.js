@@ -1,6 +1,12 @@
 const getBasePath = require('../lib/utils/basepath');
 
-const baseUrl = 'http://locahost:3000';
+const isDev = process.env.NODE_ENV !== 'production';
+const baseUrl = isDev ? 'http://localhost:3000' : 'https://www.sentimento.io';
+const basePath = getBasePath();
+
+// log out config
+console.log("siteMetadata : basePath = " + basePath);
+console.log("siteMetadata : baseUrl = " + baseUrl);
 
 const siteMetadata = {
   analytics: {
@@ -81,6 +87,8 @@ const siteMetadata = {
   },
 
   site: {
+    isDev: isDev,
+    baseUrl: baseUrl,
     name: 'Blog Starter',
     logo: `${baseUrl}/static/images/logo.svg`,
     url:  baseUrl,

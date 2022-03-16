@@ -18,7 +18,7 @@ const NewsletterForm = () => {
     console.log('formData:', formData);
     formData.provider = siteMetadata.newsletter.provider;
     
-    const res = await fetch('/api/newsletter', {
+    const res = await fetch(`${siteMetadata.site.baseUrl}${siteMetadata.site.context}/api/newsletter`, {
       body: JSON.stringify(formData),
       headers: {
         'Content-Type': 'application/json',
