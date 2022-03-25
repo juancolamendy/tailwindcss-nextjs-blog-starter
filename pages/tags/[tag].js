@@ -30,12 +30,12 @@ const Tag = ({ posts, tag }) => {
   // console.log('--- posts:', posts);
   // console.log('--- tag:', tag);
   return (<>
-    <TagSEO title={siteMetadata.meta.title} description={siteMetadata.meta.description} />
+    <TagSEO title={`Tag: '${tag}' for ${siteMetadata.meta.title}`} description={`Tag: '${tag}' - Description for ${siteMetadata.meta.description}`} />
     <main className="mb-auto">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
         <div className="pt-8 pb-4 sm:pt-10 md:pt-12">
           <h1 className="blog-h1">
-            Blogs
+            Tag: '{tag}'
           </h1>
         </div>
         <PostsSlicedListView posts={posts} />
