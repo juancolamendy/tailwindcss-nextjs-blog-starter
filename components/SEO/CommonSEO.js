@@ -36,7 +36,7 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
 
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <link rel="canonical" href={`${siteMetadata.site.url}${siteMetadata.site.context}${router.asPath}`} />
+    <link rel="canonical" href={`${siteMetadata.site.url}${siteMetadata.site.context}${router.asPath!=='/'?router.asPath:''}`} />
 
     <script 
         type='application/ld+json' 
