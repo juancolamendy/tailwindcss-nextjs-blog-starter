@@ -38,7 +38,7 @@ export async function getStaticProps({ params }) {
 const PostPage = ({ posts, currentPage }) => {
   return (
   <>
-    <PageSEO title={siteMetadata.meta.title} description={siteMetadata.meta.description} />
+    <PageSEO title={`Page: ${currentPage} for ${siteMetadata.meta.title}`} description={`Page: ${currentPage} - Description: ${siteMetadata.meta.description}`} />
     <Breadcrumb list={buildBreadcrum(currentPage)} />
     <main className="mb-auto">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">

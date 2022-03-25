@@ -18,7 +18,7 @@ export async function getStaticProps() {
 const Posts = ({ posts, currentPage }) => {
   return (
   <>
-    <PageSEO title={siteMetadata.meta.title} description={siteMetadata.meta.description} />
+    <PageSEO title={`All Blogs for ${siteMetadata.meta.title}`} description={`All Blogs - Description: ${siteMetadata.meta.description}`} />
     <Breadcrumb list={breadcrum} />
     <main className="mb-auto">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
