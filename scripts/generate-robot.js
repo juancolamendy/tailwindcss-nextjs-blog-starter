@@ -8,6 +8,7 @@ const siteMetadata = require('../data/siteMetadata');
   const robot = `Sitemap: ${siteMetadata.site.url}${siteMetadata.site.context}/sitemap.xml
 User-agent: *
 Allow: /*
+Disallow: ${siteMetadata.site.context}/_next/*
   `;
 
   // eslint-disable-next-line no-sync
