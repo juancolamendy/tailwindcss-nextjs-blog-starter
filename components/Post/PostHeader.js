@@ -15,8 +15,7 @@ const PostHeader = ({ frontMatter }) => {
         <h1 className="text-3xl font-extrabold leading-9 tracking-tight sm:text-4xl sm:leading-10 md:text-5xl md:leading-12">
           {frontMatter.title}
         </h1>
-        <p className="text-2xl leading-7 font-light">
-          {frontMatter.headerIntroduction || frontMatter.summary}
+        <p className="text-2xl leading-7 font-light" dangerouslySetInnerHTML={{ __html: (frontMatter.headerIntroduction || frontMatter.summary) }}>
         </p>
         <p className="text-lg leading-7 font-extralight">
           By <Link href={`/authors/${frontMatter.authorDetails && frontMatter.authorDetails.slug ?frontMatter.authorDetails.slug.join('/') : 'default'}`} className="font-light leading-6 link-text">{frontMatter.authorDetails && frontMatter.authorDetails.name ? frontMatter.authorDetails.name : ''}</Link> · Updated: <span className="font-light leading-6"><time dateTime={frontMatter.date}>{formatDate(frontMatter.date)}</time></span>
