@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const H2 = ({ id, children }) => {
+import classNames from 'classnames';
+
+const H2 = ({ id, children, color, background }) => {
   return (
-  <h2 className="text-2xl font-bold leading-9 text-gray-800 sm:text-3xl my-4 sm:leading-10" id={id}>
+  <h2 className={classNames('text-2xl font-bold leading-9 sm:text-3xl my-4 sm:leading-10', color?color:'text-gray-800', background, background?'py-20 sm:py-24 md:py-32 text-center':'' )} id={id}>
     {children}
   </h2>
   );
@@ -11,6 +13,8 @@ const H2 = ({ id, children }) => {
 
 H2.propTypes = {
   id: PropTypes.string,
+  color: PropTypes.string,
+  background: PropTypes.string,
 	children: PropTypes.node
 };
 
