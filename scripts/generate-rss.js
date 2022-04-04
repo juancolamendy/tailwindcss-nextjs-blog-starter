@@ -45,7 +45,7 @@ const generateRss = (posts, page = 'feed.xml') => `
       <webMaster>${siteMetadata.author.email} (${siteMetadata.author.name})</webMaster>
       <lastBuildDate>${new Date(posts[0].date).toUTCString()}</lastBuildDate>
       <atom:link href="${siteMetadata.site.url}${siteMetadata.site.context}/${page}" rel="self" type="application/rss+xml"/>
-      ${posts.map(generateRssItem).join('')}
+      ${posts.filter(x => x).map(generateRssItem).join('')}
     </channel>
   </rss>
 `;
@@ -55,7 +55,7 @@ function getAllTags(frontMatters) {
   let tagsSet = {};
 
   // logic
-  frontMatters.forEach( fm => {
+  frontMatters.filter(x => x).forEach( fm => {
     fm.tags.forEach( tag => {
       const formattedTag = slug(tag);
       if (!(formattedTag in tagsSet)) {
@@ -113,7 +113,7 @@ function getAllTags(frontMatters) {
   const root = process.cwd();
   const allTags = getAllTags(frontMatters);
   allTags.forEach(tag => {
-    const filteredPosts = frontMatters.filter(
+    const filteredPosts = frontMatters.filter(x => x).filter(
       (post) => post.draft !== true && post.tags.map((t) => slug(t)).includes(tag)
     );
     const rss = generateRss(filteredPosts, `tags/${tag}/feed.xml`);
