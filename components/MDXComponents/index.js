@@ -9,6 +9,7 @@ import { H1 } from '../Post';
 import { H2 } from '../Post';
 import { H3 } from '../Post';
 import { H4 } from '../Post';
+import { H5 } from '../Post';
 import { ImageCredit } from '../Post';
 
 export const MDXComponents = {
@@ -23,6 +24,7 @@ export const MDXComponents = {
   h2: H2,
   h3: H3,
   h4: H4,
+  h5: H5,
   pre: Pre,
   wrapper: ({ components, layout, ...rest }) => {
     const Layout = require(`../../layouts/${layout}`).default;
