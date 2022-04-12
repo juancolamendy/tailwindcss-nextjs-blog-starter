@@ -23,16 +23,12 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
     <meta property="og:site_name" content={siteMetadata.meta.title} />
     <meta property="og:description" content={description || siteMetadata.meta.description} />
     <meta property="og:title" content={title || siteMetadata.meta.title} />
-    { Array.isArray(ogImage) ? (
-      ogImage.map(({ url }) => <meta property="og:image" content={url} key={url} />)
-    ) : (
-      <meta property="og:image" content={ogImage} key={ogImage} />
-    )}
+    <meta property="og:image" content={ogImage ? `${siteMetadata.site.url}${siteMetadata.site.context}${ogImage}` : `${siteMetadata.site.url}${siteMetadata.site.context}${siteMetadata.site.banner}`} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content={siteMetadata.site.twitter} />
     <meta name="twitter:title" content={title || siteMetadata.meta.title} />
     <meta name="twitter:description" content={description || siteMetadata.meta.description} />
-    <meta name="twitter:image" content={twImage} />
+    <meta name="twitter:image" content={twImage ? `${siteMetadata.site.url}${siteMetadata.site.context}${twImage}` : `${siteMetadata.site.url}${siteMetadata.site.context}${siteMetadata.site.banner}` } />
 
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />

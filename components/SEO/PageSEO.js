@@ -20,8 +20,8 @@ const PageSEO = ({ title, description, ogImage, twImage }) => {
       title={title}
       description={description}
       ogType="website"
-      ogImage={ogImage || `${siteMetadata.site.url}${siteMetadata.site.context}${siteMetadata.site.banner}`}
-      twImage={twImage || `${siteMetadata.site.url}${siteMetadata.site.context}${siteMetadata.site.banner}`}
+      ogImage={ogImage}
+      twImage={twImage}
     />
     <Head>
       <script 

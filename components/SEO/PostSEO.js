@@ -22,8 +22,8 @@ const PostSEO = ({title, description, authorSlug, ogImage, twImage, date, lastmo
       title={title}
       description={description}
       ogType="article"
-      ogImage={ogImage || `${siteMetadata.site.url}${siteMetadata.site.context}${siteMetadata.site.banner}`}
-      twImage={twImage || `${siteMetadata.site.url}${siteMetadata.site.context}${siteMetadata.site.banner}`}
+      ogImage={ogImage}
+      twImage={twImage}
     />
     <Head>
       <meta property="article:published_time" content={formatToISO(date)} />
