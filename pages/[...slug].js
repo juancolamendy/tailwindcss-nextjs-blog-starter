@@ -2,6 +2,9 @@ import { getFiles, formatSlug, getAllFilesFrontMatter, getBlogBySlug } from '../
 
 import { MDXLayoutRenderer } from '../components/MDXComponents';
 import { H1 } from '../components/Post';
+import { NewsletterForm } from '../components/NewsletterForm';
+
+import siteMetadata from '../data/siteMetadata';
 
 export async function getStaticPaths() {
   const posts = getFiles('blogs');
@@ -33,14 +36,24 @@ const Post = ({ post, prev, next }) => {
   return (
   <>
     {frontMatter.draft !== true ? (
-      <MDXLayoutRenderer
-        layout={'PostLayout'}
-        toc={toc}
-        mdxSource={mdxSource}
-        frontMatter={frontMatter}
-        prev={prev}
-        next={next}
-      />
+      <>
+        <MDXLayoutRenderer
+          layout={'PostLayout'}
+          toc={toc}
+          mdxSource={mdxSource}
+          frontMatter={frontMatter}
+          prev={prev}
+          next={next}
+        />
+        <section className="w-full">
+          <div className="flex flex-col justify-center items-center mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 mb-4">
+            <h2 className="blog-h2">Join Our Newsletter</h2>
+            <div className="w-full mt-4">
+              { siteMetadata.newsletter && siteMetadata.newsletter.provider && <NewsletterForm /> }
+            </div>
+          </div>
+        </section>
+      </>
     ) : (
       <div className="mt-24 text-center">
         <H1>

@@ -25,7 +25,8 @@ const Index = ({ posts }) => {
           { siteMetadata.newsletter && siteMetadata.newsletter.provider && 
           (<div className="flex justify-center items-center w-full md:w-3/4 lg:w-5/12 py-4 sm:py-6 px-2">
             <NewsletterForm /> 
-          </div>)}
+           </div>)
+          }
         </div>
       </section>
       <main className="mb-auto">
