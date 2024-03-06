@@ -36,7 +36,7 @@ const PostsPagedListView = ({title, posts, currentPage}) => {
       </h1>
       <SearchBox onChange={ e => setSearchValue(e.target.value) } />
     </div>
-    <ul className="divide-y">
+    <ul className="grid max-w-md grid-cols-1 mx-auto md:grid-cols-3 gap-y-12 md:gap-x-8 lg:gap-x-16 md:max-w-none">
       {!filteredPosts.length && 'No posts found.'}
       {filteredPosts.map( frontMatter => {
         const { slug, date, title, summary, tags, authorDetails, headerImage } = frontMatter;

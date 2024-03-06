@@ -9,8 +9,13 @@ import { formatDate } from '../../lib/utils/dateutils';
 
 const PostSummary = ({slug, date, title, summary, tags, authorName, authorSlug, headerImage}) => {
   return (
-  <article className="flex flex-col">
-    <header className="flex flex-col space-y-1 sm:space-y-2">
+  <article className="flex flex-col gap-3">
+    <header className="flex flex-col gap-2">
+      <div className="flex flex-col">
+        { headerImage && (<figure className="relative"><div className="block h-64 w-full rounded-lg"><Link href={`/${slug}`}>
+          <Image src={headerImage} alt={title} title={title} layout="fill" objectFit="cover" className="object-cover w-full h-full transition-all duration-200 transform hover:scale-110 rounded-xl" />
+        </Link></div></figure>)}
+      </div>
       <h2 className="blog-h2">
         <Link
           href={`/${slug}`}
@@ -19,24 +24,19 @@ const PostSummary = ({slug, date, title, summary, tags, authorName, authorSlug, 
           {title}
         </Link>
       </h2>
+      <p className="text-xs">
+        By <Link href={`/authors/${authorSlug}`} className="font-medium leading-6 text-gray-500 link-text">{authorName}</Link> · Updated: <span className="font-medium leading-6 text-gray-500"><time dateTime={date}>{formatDate(date)}</time></span>
+      </p>
+      <div className="text-base text-gray-500 mt-2">
+        {summary}
+      </div>
       <div className="flex flex-wrap">
         {tags.map((tag) => (
           <Tag key={tag} text={tag} />
         ))}
       </div>
-      <p className="text-xs">
-        By <Link href={`/authors/${authorSlug}`} className="font-medium leading-6 text-gray-500 link-text">{authorName}</Link> · Updated: <span className="font-medium leading-6 text-gray-500"><time dateTime={date}>{formatDate(date)}</time></span>
-      </p>
     </header>
-    <div className="flex flex-col mt-2 sm:mt-4">
-      { headerImage && (<figure className="h-64 w-full relative">
-        <Image src={headerImage} alt={title} title={title} layout="fill" objectFit="cover" />
-      </figure>)}
-      <div className="text-base text-gray-500 mt-3 sm:mt-5">
-        {summary}
-      </div>
-    </div>
-    <footer className="text-xs font-medium leading-6 mt-3">
+    <footer className="text-xs font-medium leading-6">
       <Link
         href={`/${slug}`}
         className="text-gray-500 link-text"

@@ -1,45 +1,47 @@
-import { PageSEO } from '../components/SEO';
-import { Tag } from '../components/Tag';
-import { Breadcrumb } from '../components/Post';
+import { slug } from 'github-slugger'
 
-import { getAllTags } from '../lib/tags'; 
+import { TagSEO } from '../../components/SEO';
+import { PostsSlicedListView } from '../../components/PostsList';
 
-import siteMetadata from '../data/siteMetadata';
-import { tagsBreadcrum } from '../data/breadcrums';
+import { getAllFilesFrontMatter } from '../../lib/mdx';
+import { getAllTags } from '../../lib/tags'; 
+import siteMetadata from '../../data/siteMetadata';
 
-const breadcrum = [...tagsBreadcrum];
-
-export async function getStaticProps() {
+export async function getStaticPaths() {
   const tags = await getAllTags();
-  return { props: { tags } }
+
+  return {
+    paths: tags.map( tag => ({
+      params: {
+        tag,
+      },
+    })),
+    fallback: false,
+  }
 }
 
-const Tags = ({ tags }) => {
+export async function getStaticProps({ params }) {
+  const allPosts = await getAllFilesFrontMatter('blogs');
+  const filteredPosts = allPosts.filter( post => post.draft !== true && post.tags.map(t => slug(t)).includes(params.tag) );
+  return { props: { posts: filteredPosts, tag: params.tag } };
+}
+
+const Tag = ({ posts, tag }) => {
+  // console.log('--- posts:', posts);
+  // console.log('--- tag:', tag);
   return (<>
-    <PageSEO title={`Tags - ${siteMetadata.site.name}`} description="Tags - Things we blog about" />
-    <Breadcrumb list={breadcrum} />
+    <TagSEO title={`Tag: '${tag}' for ${siteMetadata.meta.title}`} description={`Tag: '${tag}' - Description for ${siteMetadata.meta.description}`} />
     <main className="mb-auto">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-        <div className="flex flex-col items-start justify-start divide-y divide-gray-200 md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
-          <div className="space-x-2 pt-6 pb-8 md:space-y-5">
-            <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:border-r-2 md:px-6 md:text-6xl md:leading-14">
-              Tags
-            </h1>
-          </div>
-          <div className="flex max-w-lg flex-wrap">
-            {tags.length === 0 && 'No tags found.'}
-            {tags.map( t => {
-              return (
-                <div key={t} className="mt-2 mb-2 mr-5">
-                  <Tag text={t} />
-                </div>
-              )
-            })}
-          </div>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 xl:px-0">
+        <div className="pt-8 pb-4 sm:pt-10 md:pt-12">
+          <h1 className="blog-h1">
+            Tag: '{tag}'
+          </h1>
         </div>
+        <PostsSlicedListView posts={posts} />
       </div>
     </main>
   </>);
 };
 
-export default Tags;
+export default Tag;

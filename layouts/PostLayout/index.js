@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
 import siteMetadata from '../../data/siteMetadata';
+import { Image } from '../../components/Image';
 import { PostSEO } from '../../components/SEO';
 import { PersonCard, PostHeader, PostToc, PostSharer, PostFooter, PostComment, Breadcrumb } from '../../components/Post';
 
@@ -46,8 +47,11 @@ const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
         <Breadcrumb list={buildBreadcrum(frontMatter.title, router.asPath)} />
 
         <div className="max-w-7xl mx-auto grid grid-cols-12 gap-4 my-4 md:my-6 px-2">
-          <section className="col-span-12 md:col-span-9 border border-gray-200 rounded-lg shadow-lg shadow-gray-500/50 px-4 py-6 md:px-8 md:py-10 bg-white" role="content">
-            <div className="prose max-w-none" role="post-content">
+          <section className="col-span-12 md:col-span-9 border border-gray-200 rounded-lg shadow-lg shadow-gray-500/50 px-4 py-6 md:px-8 md:py-10 bg-white">
+            <div className="relative block h-64 w-full max-w-[320px] rounded-lg">
+              <Image src={frontMatter.headerImage} alt={frontMatter.title} title={frontMatter.title} layout="fill" className="object-cover w-full h-full rounded-xl" />
+            </div>
+            <div className="prose max-w-none mt-3" role="post-content">
               {children}
             </div>
           </section>

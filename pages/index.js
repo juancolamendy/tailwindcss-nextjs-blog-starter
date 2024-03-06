@@ -30,7 +30,7 @@ const Index = ({ posts }) => {
         </div>
       </section>
       <main className="mb-auto">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 xl:px-0">
           <PostsSlicedListView posts={posts} />
         </div>
       </main>
