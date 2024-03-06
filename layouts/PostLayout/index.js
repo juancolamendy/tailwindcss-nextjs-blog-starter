@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 import siteMetadata from '../../data/siteMetadata';
 import { PostSEO } from '../../components/SEO';
-import { PostHeader, PostToc, PostSharer, PostFooter, PostComment, Breadcrumb } from '../../components/Post';
+import { PersonCard, PostHeader, PostToc, PostSharer, PostFooter, PostComment, Breadcrumb } from '../../components/Post';
 
 const buildBreadcrum = (title, href) =>  ([
   {
@@ -39,21 +39,41 @@ const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
       lastmod={frontMatter.lastmod}
       breadcrum={buildBreadcrum(frontMatter.title, router.asPath)}
     />
-    <main role="document">
+    <main role="document" className="bg-gray-100/60">
       <article>
         <PostSharer title={frontMatter.title} />
         <PostHeader frontMatter={frontMatter} />
         <Breadcrumb list={buildBreadcrum(frontMatter.title, router.asPath)} />
-        <PostToc toc={toc} />
-        <section className="mb-auto" role="content">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 pb-10">
+
+        <div className="max-w-7xl mx-auto grid grid-cols-12 gap-4 my-4 md:my-6 px-2">
+          <section className="col-span-12 md:col-span-9 border border-gray-200 rounded-lg shadow-lg shadow-gray-500/50 px-4 py-6 md:px-8 md:py-10 bg-white" role="content">
             <div className="prose max-w-none" role="post-content">
               {children}
             </div>
-            { siteMetadata.comment && siteMetadata.comment.provider && <PostComment frontMatter={frontMatter} /> }
-            <PostFooter tags={frontMatter.tags} prev={prev} next={next} />
+          </section>
+
+          <div className="col-span-12 md:col-span-3 order-first md:order-last self-start space-y-4 ">            
+            <PersonCard 
+              name={frontMatter.authorDetails.name}
+              title={frontMatter.authorDetails.summary}
+              profileUrl={`/authors/${frontMatter.authorDetails.slug.join('/')}`}
+              imageUrl={frontMatter.authorDetails.avatar}
+            />
+
+            <div className="hidden md:block border border-gray-200 rounded-lg shadow-lg shadow-gray-500/50 px-4 md:px-8 bg-white">
+              <PostToc toc={toc} />
+            </div>            
           </div>
-        </section>
+
+
+        </div>
+        
+        <div className="gap-4 max-w-7xl mx-auto mt-3 my-4 md:my-6 px-2">
+          { siteMetadata.comment && siteMetadata.comment.provider && <PostComment frontMatter={frontMatter} /> }
+
+          <PostFooter tags={frontMatter.tags} prev={prev} next={next} />
+        </div>
+
       </article>
     </main>
   </>
@@ -63,7 +83,7 @@ const PostLayout = ({ frontMatter, toc, prev, next, children }) => {
 PostLayout.propTypes = {
   children: PropTypes.node,
   frontMatter: PropTypes.object,
-	toc: PropTypes.array,
+    toc: PropTypes.array,
   prev: PropTypes.object,
   next: PropTypes.object,
 };

@@ -6,6 +6,7 @@ export { default as H3 } from './H3';
 export { default as H4 } from './H4';
 export { default as H5 } from './H5';
 export { default as ImageCredit } from './ImageCredit';
+export { default as PersonCard } from './PersonCard';
 export { default as PostComment } from './PostComment';
 export { default as PostFooter } from './PostFooter';
 export { default as PostHeader } from './PostHeader';

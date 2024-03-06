@@ -45,14 +45,14 @@ const Post = ({ post, prev, next }) => {
           prev={prev}
           next={next}
         />
-        <section className="w-full">
+        { siteMetadata.newsletter && siteMetadata.newsletter.provider && <section className="w-full bg-gray-100/60">
           <div className="flex flex-col justify-center items-center mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 mb-4">
             <h2 className="blog-h2">Join Our Newsletter</h2>
             <div className="w-full mt-4">
-              { siteMetadata.newsletter && siteMetadata.newsletter.provider && <NewsletterForm /> }
+              <NewsletterForm />
             </div>
           </div>
-        </section>
+        </section> }
       </>
     ) : (
       <div className="mt-24 text-center">

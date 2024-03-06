@@ -7,7 +7,7 @@ import siteMetadata from '../../data/siteMetadata';
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col mt-6 justify-center items-center py-8 bg-primary-100">
+    <footer className="flex flex-col pt-6 justify-center items-center py-8 bg-gray-100/60">
       <div className="flex space-x-4 mb-3">
         { siteMetadata.site && siteMetadata.site.email && <SocialIcon kind="mail" href={`mailto:${siteMetadata.site.email}`} size={10} /> }
         { siteMetadata.site && siteMetadata.site.github && <SocialIcon kind="github" href={siteMetadata.site.github} size={6} /> }
