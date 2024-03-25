@@ -132,16 +132,12 @@ export const buildBreadcrum = (defaultPath, breadcrum) => {
       [
         ${ breadcrum.map( (x,i) => {
           return `{
-          "@type":"ListItem",
+          "@type": "ListItem",
           "position": ${i},
-          "item": {
-            "@type":"WebPage",
-            "@id":"${x.href}",
-            "url":"${x.href}", 
-            "name":"${x.text}"
-          }
+          "name": "${x.text}",
+          "item": "${x.href}"
           },`;
-        }).join(' ')}
+        }).join(' ') }
       ]
     }
   ]}
