@@ -15,6 +15,7 @@ const siteMetadata = {
     umamiWebsiteId: '', 
     umamiInstance: '', 
     googleAnalyticsId: '', 
+    facebookPixelId: '',
   },
 
   author: {
